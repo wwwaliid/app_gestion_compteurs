@@ -1,6 +1,7 @@
 package com.example.test1.Data
 
-data class Compteur (
+data class CompteurRes (
+    val id : Integer,
     val numero: String,
     val nom_abonne: String,
     val adresse: String,

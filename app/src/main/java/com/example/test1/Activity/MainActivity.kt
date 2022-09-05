@@ -18,51 +18,8 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        val retrofit = RetrofitClient.getInstance();
-        val iretrofit = retrofit.create(RetrofitInterface::class.java)
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.page_compteurs)
-
-        val compteurList:ArrayList<Compteur> = ArrayList<Compteur>()
-        val listView = findViewById<ListView>(R.id.list1)
-
-        fun sendListCompteursReq() {
-            val compteurRes = iretrofit.listCompteurs()
-            compteurRes.enqueue(object : Callback<List<Compteur>> {
-                override fun onResponse(call: Call<List<Compteur>>, response: Response<List<Compteur>>) {
-                    val allCompteur = response.body()
-                    if (allCompteur != null) {
-                        for(c in allCompteur) {
-                            /*Log.v(
-                                MainActivity::class.simpleName,
-                                "ID: ${c.id} \n NAME: ${c.name}"
-                            )*/
-                            compteurList.add(Compteur(c.id, c.nomAbonne, c.index, c.ancien_index, c.rue, c.date_releve, c.numero))
-                            val adapter: CompteurAdapter = CompteurAdapter(this@MainActivity, compteurList)
-                            listView.adapter = adapter
-
-                        }
-                        val nbrCompteur = findViewById<TextView>(R.id.nbrCompteur)
-                        nbrCompteur.text = "Nombre de compteurs : " + allCompteur.count().toString()
-                    }
-                }
-                override fun onFailure(call: Call<List<Compteur>>, t: Throwable) {
-                    Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
-                }
-            })
-        }
-        sendListCompteursReq()
-
-        val refresh_button : Button = findViewById(R.id.refresh)
-        refresh_button.setOnClickListener{
-            compteurList.clear()
-            listView.adapter = null
-            sendListCompteursReq()
-        }
-
-
 
 
         /*val buttonSignin = findViewById<Button>(R.id.buttonSignin)

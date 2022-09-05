@@ -20,7 +20,7 @@
             android:name=".Activity.HomePage"
             android:exported="false" />
         <activity
-            android:name=".Activity.CompteurInfo"
+            android:name=".Activity.releveur.CompteurInfo"
             android:exported="false" />
         <activity
             android:name=".Activity.SigninPage"
@@ -33,7 +33,19 @@
         </activity>
 
         <activity
-            android:name=".Activity.AdminDashboard"
+            android:name=".Activity.admin.AdminDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.agentfacturation.AgentFacturationHome"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.releveur.ReleveurHome"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.releveur.ListeCompteurs"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.releveur.CreerCompteur"
             android:exported="false" />
 
         <activity

@@ -1,4 +1,4 @@
-package com.example.test1.Activity
+package com.example.test1.Activity.releveur
 
 import android.os.Bundle
 import android.util.Log
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.test1.Activity.MainActivity
 import com.example.test1.Data.EditIndexReq
 import com.example.test1.R
 import com.example.test1.Retrofit.RetrofitClient
@@ -30,15 +31,15 @@ class CompteurInfo : AppCompatActivity()  {
         val nomAbonne: TextView = findViewById(R.id.nomAbonne)
         val index: TextView = findViewById(R.id.index)
         val ancienIndex: TextView = findViewById(R.id.ancienIndex)
-        val rue: TextView = findViewById(R.id.rue)
+        val adresse: TextView = findViewById(R.id.adresse)
         val dateReleve: TextView = findViewById(R.id.dateReleve)
         val numero: TextView = findViewById(R.id.numero)
 
-        nomAbonne.text = intent.getStringExtra("nomAbonne");
+        nomAbonne.text = intent.getStringExtra("nom_abonne");
         index.text = intent.getStringExtra("index");
         ancienIndex.text = intent.getStringExtra("ancien_index");
-        rue.text = intent.getStringExtra("rue");
-        dateReleve.text = intent.getStringExtra("dateReleve");
+        adresse.text = intent.getStringExtra("adresse");
+        dateReleve.text = intent.getStringExtra("date_releve");
         numero.text = intent.getStringExtra("numero");
 
         val index_edittext : EditText = findViewById(R.id.index_edittext)

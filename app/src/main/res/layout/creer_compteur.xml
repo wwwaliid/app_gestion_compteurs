@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/creerCompteur_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Création de compteur"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_margin="50dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/numero_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Numero"
+        android:layout_below="@id/creerCompteur_title"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/nomAbonne_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="Nom abonné"
+        android:layout_below="@id/numero_edittext"
+        android:layout_margin="10dp" />
+
+    <EditText
+        android:id="@+id/adresse_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Adresse"
+        android:ems="10"
+        android:layout_below="@id/nomAbonne_edittext"
+        android:layout_margin="10dp" />
+
+    <Button
+        android:id="@+id/creerCompteur_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Créer compteur"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_margin="40dp"
+        android:layout_below="@id/adresse_edittext" />
+
+</RelativeLayout>

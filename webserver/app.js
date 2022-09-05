@@ -38,7 +38,7 @@ app.get('/compteurs', (request,response) => {
 app.post('/editindex', (request,response) => {
   console.log(request.body)
 
-  client.query('UPDATE compteurs SET index = $1, ancien_index = $2, date_releve = $3 WHERE id = $4',[request.body.index, request.body.ancienIndex, request.body.dateReleve, request.body.id], (error, results) => {
+  client.query('UPDATE compteurs SET index = $1, ancien_index = $2, date_releve = $3 WHERE id = $4',[request.body.index, request.body.ancien_index, request.body.date_releve, request.body.id], (error, results) => {
     console.log('query sent');
     
   })
@@ -55,6 +55,30 @@ app.post('/signin', (request,response) => {
     else{
       console.log(results.rows[0]);
       response.send(results.rows[0])
+    }
+  })
+});
+
+app.post('/signup', (request,response) => {
+  console.log(request.body)
+
+  client.query('INSERT INTO users(nom, email, password, role) VALUES ($1,$2,$3,$4)',[request.body.nom, request.body.email, request.body.password, request.body.role], (error, results) => {
+    if (error) {
+      throw "erroooooooor"
+    }
+    else{
+    }
+  })
+});
+
+app.post('/creercompteur', (request,response) => {
+  console.log(request.body)
+
+  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve) VALUES ($1,$2,$3,$4,$5,$6)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve], (error, results) => {
+    if (error) {
+      throw "erroooooooor"
+    }
+    else{
     }
   })
 });

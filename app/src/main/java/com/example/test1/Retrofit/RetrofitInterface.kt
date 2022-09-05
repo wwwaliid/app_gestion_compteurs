@@ -1,11 +1,6 @@
 package com.example.test1.Retrofit
 
-import com.example.test1.Data.Compteur
-import com.example.test1.Data.EditIndexReq
-import com.example.test1.Data.SigninReq
-import com.example.test1.Data.user
-import okhttp3.ResponseBody
-import org.json.JSONObject
+import com.example.test1.Data.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -19,9 +14,13 @@ interface RetrofitInterface {
     fun executeSignup(@Body map: HashMap<String?, String?>?): Call<Void?>?*/
 
     @GET("compteurs")
-    fun listCompteurs(): Call<List<Compteur>>
+    fun listCompteurs(): Call<List<CompteurRes>>
     @POST("editindex")
     fun editIndex(@Body data : EditIndexReq): Call<EditIndexReq>
     @POST("signin")
-    fun signIn(@Body data : SigninReq): Call<user>
+    fun signIn(@Body data : SigninReq): Call<User>
+    @POST("signup")
+    fun signUp(@Body data : User): Call<User>
+    @POST("creercompteur")
+    fun creerCompteur(@Body data : Compteur): Call<Compteur>
 }

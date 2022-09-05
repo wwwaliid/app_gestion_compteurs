@@ -1,7 +1,6 @@
 package com.example.test1.Data
 
-data class user (
-    val id : String,
+data class User (
     val nom :String,
     val email: String,
     val password : String,

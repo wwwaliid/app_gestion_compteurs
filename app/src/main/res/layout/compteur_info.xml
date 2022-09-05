@@ -12,7 +12,6 @@
         android:text="Informations sur compteur"
         android:textSize="30dp"
         android:textStyle="bold"/>
-
     <TextView
         android:id="@+id/numero_text"
         android:layout_width="wrap_content"
@@ -42,7 +41,7 @@
         android:paddingLeft="10dp"
         android:layout_below="@+id/index_text"/>
     <TextView
-        android:id="@+id/rue_text"
+        android:id="@+id/adresse_text"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="Rue : "
@@ -54,7 +53,7 @@
         android:layout_height="50dp"
         android:text="Date de relève : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/rue_text"/>
+        android:layout_below="@+id/adresse_text"/>
 
     <TextView
         android:id="@+id/numero"
@@ -89,20 +88,20 @@
         android:layout_below="@+id/index"
         android:layout_toRightOf="@+id/ancienIndex_text"/>
     <TextView
-        android:id="@+id/rue"
+        android:id="@+id/adresse"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/ancienIndex"
-        android:layout_toRightOf="@+id/rue_text"/>
+        android:layout_toRightOf="@+id/adresse_text"/>
     <TextView
         android:id="@+id/dateReleve"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="TextView"
         android:paddingLeft="10dp"
-        android:layout_below="@+id/rue"
+        android:layout_below="@+id/adresse"
         android:layout_toRightOf="@+id/dateReleve_text"/>
 
     <EditText
