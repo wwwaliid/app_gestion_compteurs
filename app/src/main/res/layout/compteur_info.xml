@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/compteur_info_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Informations sur compteur"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/numero_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Numero du compteur : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/compteur_info_title"/>
+    <TextView
+        android:id="@+id/nomAbonne_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Nom d'abonné : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/numero_text"/>
+    <TextView
+        android:id="@+id/index_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Index du compteur : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/nomAbonne_text"/>
+    <TextView
+        android:id="@+id/ancienIndex_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Ancien Index du compteur : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/index_text"/>
+    <TextView
+        android:id="@+id/rue_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Rue : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/ancienIndex_text"/>
+    <TextView
+        android:id="@+id/dateReleve_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="Date de relève : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/rue_text"/>
+
+    <TextView
+        android:id="@+id/numero"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/compteur_info_title"
+        android:layout_toRightOf="@+id/numero_text"/>
+    <TextView
+        android:id="@+id/nomAbonne"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/numero"
+        android:layout_toRightOf="@+id/nomAbonne_text"/>
+    <TextView
+        android:id="@+id/index"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/nomAbonne"
+        android:layout_toRightOf="@+id/index_text"/>
+    <TextView
+        android:id="@+id/ancienIndex"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/index"
+        android:layout_toRightOf="@+id/ancienIndex_text"/>
+    <TextView
+        android:id="@+id/rue"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/ancienIndex"
+        android:layout_toRightOf="@+id/rue_text"/>
+    <TextView
+        android:id="@+id/dateReleve"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/rue"
+        android:layout_toRightOf="@+id/dateReleve_text"/>
+
+    <EditText
+        android:id="@+id/index_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="index"
+        android:layout_below="@id/dateReleve_text"/>
+    <Button
+        android:id="@+id/valider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider"
+        android:layout_below="@+id/index_edittext"/>
+
+</RelativeLayout>
