@@ -26,6 +26,7 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
         val rue : TextView = view.findViewById(R.id.adresse_text)
         val dateReleve : TextView = view.findViewById(R.id.dateReleve_text)
         val numero : TextView = view.findViewById(R.id.numero_text)
+        val quartier : TextView = view.findViewById(R.id.quartier_text)
 
 
         nomAbonne.text = arrayList[position].nom_abonne
@@ -34,6 +35,7 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
         rue.text = arrayList[position].adresse
         dateReleve.text = arrayList[position].date_releve
         numero.text = arrayList[position].numero
+        quartier.text = arrayList[position].quartier
 
         view.setOnClickListener{
             val intent = Intent(view.context, CompteurInfo::class.java)
@@ -44,6 +46,7 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
             intent.putExtra("adresse", arrayList[position].adresse)
             intent.putExtra("date_releve", arrayList[position].date_releve)
             intent.putExtra("numero", arrayList[position].numero)
+            intent.putExtra("quartier", arrayList[position].quartier)
 
             context.startActivity(intent)
         }

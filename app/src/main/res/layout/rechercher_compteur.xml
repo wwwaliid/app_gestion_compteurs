@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewRecherche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Recherche de compteur"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_margin="50dp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/recherchernumero_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Numero du compteur"
+        android:layout_below="@id/textViewRecherche"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:id="@+id/rechercherquartier_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Quartier du compteur"
+        android:layout_below="@id/recherchernumero_edittext"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"/>
+
+    <Button
+        android:id="@+id/rechercher_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rechercher"
+        android:layout_below="@+id/rechercherquartier_edittext"
+        android:layout_centerHorizontal="true"/>
+
+    <ListView
+        android:id="@+id/rechercher_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rechercher_button">
+    </ListView>
+
+
+</RelativeLayout>

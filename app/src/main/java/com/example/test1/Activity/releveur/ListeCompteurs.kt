@@ -41,10 +41,9 @@ class ListeCompteurs : AppCompatActivity(){
                             "ID: ${c.id} \n NAME: ${c.name}"
                         )*/
                             compteurList.add(
-                                CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve)
+                                CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier)
                             )
-                            val adapter: CompteurAdapter =
-                                CompteurAdapter(this@ListeCompteurs, compteurList)
+                            val adapter: CompteurAdapter = CompteurAdapter(this@ListeCompteurs, compteurList)
                             listView.adapter = adapter
 
                         }
@@ -66,5 +65,40 @@ class ListeCompteurs : AppCompatActivity(){
             listView.adapter = null
             sendListCompteursReq()
         }
+    }
+    override fun onRestart(){
+        super.onRestart()
+        val retrofit = RetrofitClient.getInstance();
+        val iretrofit = retrofit.create(RetrofitInterface::class.java)
+
+        val compteurList: ArrayList<CompteurRes> = ArrayList<CompteurRes>()
+        val listView = findViewById<ListView>(R.id.list1)
+
+        val compteurRes = iretrofit.listCompteurs()
+        compteurRes.enqueue(object : Callback<List<CompteurRes>> {
+            override fun onResponse(call: Call<List<CompteurRes>>, response: Response<List<CompteurRes>>) {
+                val allCompteur = response.body()
+                if (allCompteur != null) {
+                    for (c in allCompteur) {
+                        /*Log.v(
+                        MainActivity::class.simpleName,
+                        "ID: ${c.id} \n NAME: ${c.name}"
+                    )*/
+                        compteurList.add(
+                            CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier)
+                        )
+                        val adapter: CompteurAdapter = CompteurAdapter(this@ListeCompteurs, compteurList)
+                        listView.adapter = adapter
+
+                    }
+                    val nbrCompteur = findViewById<TextView>(R.id.nbrCompteur)
+                    nbrCompteur.text = "Nombre de compteurs : " + allCompteur.count().toString()
+                }
+            }
+
+            override fun onFailure(call: Call<List<CompteurRes>>, t: Throwable) {
+                Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+            }
+        })
     }
 }

@@ -33,6 +33,15 @@
         </activity>
 
         <activity
+            android:name=".Activity.admin.SignupPage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.admin.ListeUsers"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.admin.UserInfo"
+            android:exported="false" />
+        <activity
             android:name=".Activity.admin.AdminDashboard"
             android:exported="false" />
         <activity
@@ -46,6 +55,9 @@
             android:exported="false" />
         <activity
             android:name=".Activity.releveur.CreerCompteur"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.releveur.RechercherCompteur"
             android:exported="false" />
 
         <activity

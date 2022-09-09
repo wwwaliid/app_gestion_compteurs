@@ -43,6 +43,14 @@
         android:ems="10"
         android:layout_below="@id/nomAbonne_edittext"
         android:layout_margin="10dp" />
+    <EditText
+        android:id="@+id/quartier_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Quartier"
+        android:ems="10"
+        android:layout_below="@id/adresse_edittext"
+        android:layout_margin="10dp" />
 
     <Button
         android:id="@+id/creerCompteur_button"
@@ -52,6 +60,6 @@
         android:textSize="20dp"
         android:gravity="center"
         android:layout_margin="40dp"
-        android:layout_below="@id/adresse_edittext" />
+        android:layout_below="@id/quartier_edittext" />
 
 </RelativeLayout>

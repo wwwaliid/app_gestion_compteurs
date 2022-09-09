@@ -30,19 +30,21 @@ class CreerCompteur : AppCompatActivity() {
         val numero_edittext : EditText = findViewById(R.id.numero_edittext)
         val nomAbonne_edittext : EditText = findViewById(R.id.nomAbonne_edittext)
         val adresse_edittext : EditText = findViewById(R.id.adresse_edittext)
+        val quartier_edittext : EditText = findViewById(R.id.quartier_edittext)
         val creercompteur_button : Button = findViewById(R.id.creerCompteur_button)
 
         creercompteur_button.setOnClickListener{
             val numero : String = numero_edittext.text.toString()
             val nomAbonne : String = nomAbonne_edittext.text.toString()
             val adresse : String = adresse_edittext.text.toString()
+            val quartier : String = quartier_edittext.text.toString()
 
-            if(numero=="" || nomAbonne=="" || adresse==""){
+            if(numero=="" || nomAbonne=="" || adresse=="" || quartier==""){
                 val toast = Toast.makeText(applicationContext,"Please enter all fields", Toast.LENGTH_SHORT)
                 toast.show()
             }
             else{
-                val compteur : Compteur = Compteur(numero, nomAbonne, adresse, "0", "0", "")
+                val compteur : Compteur = Compteur(numero, nomAbonne, adresse, "0", "0", "",quartier)
                 val req = iretrofit.creerCompteur(compteur)
                 req.enqueue(object : Callback<Compteur> {
                     override fun onResponse(call: Call<Compteur>, response: Response<Compteur>) {

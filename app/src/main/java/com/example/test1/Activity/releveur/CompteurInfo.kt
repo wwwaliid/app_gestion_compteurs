@@ -34,6 +34,7 @@ class CompteurInfo : AppCompatActivity()  {
         val adresse: TextView = findViewById(R.id.adresse)
         val dateReleve: TextView = findViewById(R.id.dateReleve)
         val numero: TextView = findViewById(R.id.numero)
+        val quartier: TextView = findViewById(R.id.quartier)
 
         nomAbonne.text = intent.getStringExtra("nom_abonne");
         index.text = intent.getStringExtra("index");
@@ -41,6 +42,7 @@ class CompteurInfo : AppCompatActivity()  {
         adresse.text = intent.getStringExtra("adresse");
         dateReleve.text = intent.getStringExtra("date_releve");
         numero.text = intent.getStringExtra("numero");
+        quartier.text = intent.getStringExtra("quartier");
 
         val index_edittext : EditText = findViewById(R.id.index_edittext)
         val valider : Button = findViewById(R.id.valider)

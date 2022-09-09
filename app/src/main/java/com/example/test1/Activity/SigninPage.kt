@@ -43,7 +43,7 @@ class SigninPage : AppCompatActivity() {
                 toast.show()
             }
             else{
-                val data : SigninReq = SigninReq(email, password)
+                val data = SigninReq(email, password)
                 val req = iretrofit.signIn(data)
                 req.enqueue(object : Callback<User> {
                     override fun onResponse(call: Call<User>, response: Response<User>) {
@@ -66,7 +66,7 @@ class SigninPage : AppCompatActivity() {
                         }
                     }
                     override fun onFailure(call: Call<User>, t: Throwable) {
-                        Log.i(MainActivity::class.simpleName, "on FAILURE??????")
+                        Log.i(MainActivity::class.simpleName, "on FAILURE")
                     }
                 })
             }

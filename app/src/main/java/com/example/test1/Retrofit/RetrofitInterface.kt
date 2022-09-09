@@ -1,10 +1,10 @@
 package com.example.test1.Retrofit
 
 import com.example.test1.Data.*
+import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.Response
+import retrofit2.http.*
 
 interface RetrofitInterface {
     /*@POST("/login")
@@ -23,4 +23,10 @@ interface RetrofitInterface {
     fun signUp(@Body data : User): Call<User>
     @POST("creercompteur")
     fun creerCompteur(@Body data : Compteur): Call<Compteur>
+    @POST("recherchercompteur")
+    fun rechercherCompteur(@Body data : CompteurRecherche): Call<List<CompteurRes>>
+    @GET("users")
+    fun listUsers(): Call<List<UserRes>>
+    @DELETE("/deleteuser/{Id}")
+    fun deleteUser(@Path("Id") userid: String): Call<UserRes>
 }

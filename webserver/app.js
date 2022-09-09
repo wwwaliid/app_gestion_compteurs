@@ -74,7 +74,7 @@ app.post('/signup', (request,response) => {
 app.post('/creercompteur', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve) VALUES ($1,$2,$3,$4,$5,$6)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve], (error, results) => {
+  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve, quartier) VALUES ($1,$2,$3,$4,$5,$6,$7)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve, request.body.quartier ], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }
@@ -82,6 +82,55 @@ app.post('/creercompteur', (request,response) => {
     }
   })
 });
+app.post('/recherchercompteur', (request,response) => {
+  console.log(request.body)
+
+  if(request.body.numero != "" && request.body.quartier != ""){
+    //numero and quartier search
+    query = 'SELECT * FROM compteurs WHERE numero=$1 AND quartier=$2'
+  }
+  else{
+    //numero or quartier search
+    query = 'SELECT * FROM compteurs WHERE numero=$1 OR quartier=$2'
+  }
+  
+
+  client.query(query,[request.body.numero, request.body.quartier], (error, results) => {
+    if (error) {
+      throw "erroooooooor"
+    }
+    else{
+      console.log(results.rows[0]);
+      response.send(results.rows)
+    }
+  })
+});
+
+app.get('/users', (request,response) => {
+  //code to perform particular action.
+  //To access GET variable use req.query() and req.params() methods.
+
+  console.log("users!!!!");
+  client.query('SELECT * FROM users WHERE id!=$1 ORDER BY id ASC',[1], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.send(results.rows);
+  })
+});
+app.delete('/deleteuser/:id', (request,response) => {
+  const id = request.params.id;
+
+  console.log(id);
+  client.query('DELETE FROM users WHERE id=$1',[id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    console.log(results.rows);
+    response.send(results.rows);
+  })
+});
+
 
 
 app.listen(3000, function(err){

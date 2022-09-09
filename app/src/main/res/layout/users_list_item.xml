@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/numero_text"
+        android:id="@+id/nom_user_text"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="TextView"
@@ -15,7 +13,7 @@
         android:textSize="14dp"
         android:textColor="@color/white"/>
     <TextView
-        android:id="@+id/nomAbonne_text"
+        android:id="@+id/email_user_text"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="TextView"
@@ -24,7 +22,7 @@
         android:textSize="14dp"
         android:textColor="@color/white"/>
     <TextView
-        android:id="@+id/adresse_text"
+        android:id="@+id/role_user_text"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="TextView"
@@ -33,7 +31,7 @@
         android:textSize="14dp"
         android:textColor="@color/white"/>
     <TextView
-        android:id="@+id/index_text"
+        android:id="@+id/password_user_text"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="TextView"
@@ -41,33 +39,5 @@
         android:paddingLeft="10dp"
         android:textSize="14dp"
         android:textColor="@color/white"/>
-    <TextView
-        android:id="@+id/ancienIndex_text"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:background="@color/black"
-        android:paddingLeft="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/white"/>
-    <TextView
-        android:id="@+id/dateReleve_text"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:background="@color/black"
-        android:paddingLeft="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/white"/>
-    <TextView
-        android:id="@+id/quartier_text"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:background="@color/black"
-        android:paddingLeft="10dp"
-        android:textSize="14dp"
-        android:textColor="@color/white"/>
-
 
 </LinearLayout>

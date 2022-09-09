@@ -7,5 +7,6 @@ data class CompteurRes (
     val adresse: String,
     val index: String,
     val ancien_index: String,
-    val date_releve: String
+    val date_releve: String,
+    val quartier : String
 )

@@ -1,0 +1,59 @@
+package com.example.test1.Activity.admin
+
+import android.content.Intent
+import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.test1.Activity.MainActivity
+import com.example.test1.Data.EditIndexReq
+import com.example.test1.Data.UserRes
+import com.example.test1.R
+import com.example.test1.Retrofit.RetrofitClient
+import com.example.test1.Retrofit.RetrofitInterface
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
+
+class UserInfo : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.user_info)
+
+        val retrofit = RetrofitClient.getInstance();
+        val iretrofit = retrofit.create(RetrofitInterface::class.java)
+
+        val intent = intent
+
+        val nom: TextView = findViewById(R.id.nom)
+        val email: TextView = findViewById(R.id.email)
+        val role: TextView = findViewById(R.id.role)
+        val password: TextView = findViewById(R.id.password)
+
+        nom.text = intent.getStringExtra("nom")
+        email.text = intent.getStringExtra("email")
+        role.text = intent.getStringExtra("role")
+        password.text = intent.getStringExtra("password")
+
+        val supprimer : Button = findViewById(R.id.supprimer_button)
+
+        supprimer.setOnClickListener{
+
+            finish()
+            val req = iretrofit.deleteUser(intent.getStringExtra("id").toString())
+            req.enqueue(object : Callback<UserRes> {
+                override fun onResponse(call: Call<UserRes>, response: Response<UserRes>) {
+                    Log.i(MainActivity::class.simpleName, "USER DELETED")
+                }
+                override fun onFailure(call: Call<UserRes>, t: Throwable) {
+                    Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+                }
+            })
+        }
+    }
+}
