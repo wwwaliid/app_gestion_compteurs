@@ -29,4 +29,8 @@ interface RetrofitInterface {
     fun listUsers(): Call<List<UserRes>>
     @DELETE("/deleteuser/{Id}")
     fun deleteUser(@Path("Id") userid: String): Call<UserRes>
+    @POST("creeranomalie")
+    fun creerAnomalie(@Body data : Anomalie): Call<Anomalie>
+    @GET("anomalies")
+    fun listAnomalies(): Call<List<AnomalieRes>>
 }

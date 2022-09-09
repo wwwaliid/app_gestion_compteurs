@@ -1,5 +1,6 @@
 package com.example.test1.Activity.releveur
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -7,6 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
+import com.example.test1.Activity.admin.SignupPage
 import com.example.test1.Data.EditIndexReq
 import com.example.test1.R
 import com.example.test1.Retrofit.RetrofitClient
@@ -44,6 +46,7 @@ class CompteurInfo : AppCompatActivity()  {
         numero.text = intent.getStringExtra("numero");
         quartier.text = intent.getStringExtra("quartier");
 
+        val ajouter_anomalie : Button = findViewById(R.id.ajouter_anomalie_button)
         val index_edittext : EditText = findViewById(R.id.index_edittext)
         val valider : Button = findViewById(R.id.valider)
 
@@ -68,6 +71,12 @@ class CompteurInfo : AppCompatActivity()  {
                     Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
                 }
             })
+        }
+
+        ajouter_anomalie.setOnClickListener{
+            val intent = Intent(applicationContext, CreerAnomalie::class.java)
+            intent.putExtra("numero_compteur", numero.text)
+            startActivity(intent)
         }
 
     }

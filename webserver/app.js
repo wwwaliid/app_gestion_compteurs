@@ -118,6 +118,7 @@ app.get('/users', (request,response) => {
     response.send(results.rows);
   })
 });
+
 app.delete('/deleteuser/:id', (request,response) => {
   const id = request.params.id;
 
@@ -131,7 +132,29 @@ app.delete('/deleteuser/:id', (request,response) => {
   })
 });
 
+app.post('/creeranomalie', (request,response) => {
+  console.log(request.body)
 
+  client.query('INSERT INTO anomalies(numero_compteur, description) VALUES ($1,$2)',[request.body.numero_compteur, request.body.description], (error, results) => {
+    if (error) {
+      throw "erroooooooor"
+    }
+    else{
+      response.send(results.rows);
+    }
+  })
+});
+
+app.get('/anomalies', (request,response) => {
+
+  console.log("anomalies!!!!");
+  client.query('SELECT * FROM anomalies ORDER BY id ASC', (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.send(results.rows);
+  })
+});
 
 app.listen(3000, function(err){
     if (err) console.log("Error in server setup")

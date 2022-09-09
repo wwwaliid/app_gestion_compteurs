@@ -131,7 +131,14 @@
         android:id="@+id/valider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Valider"
+        android:text="Valider nouveau index"
         android:layout_below="@+id/index_edittext"/>
+    <Button
+        android:id="@+id/ajouter_anomalie_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter anomalie"
+        android:layout_below="@+id/valider"
+        android:layout_marginTop="30dp"/>
 
 </RelativeLayout>
