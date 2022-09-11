@@ -135,7 +135,7 @@ app.delete('/deleteuser/:id', (request,response) => {
 app.post('/creeranomalie', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO anomalies(numero_compteur, description) VALUES ($1,$2)',[request.body.numero_compteur, request.body.description], (error, results) => {
+  client.query('INSERT INTO anomalies(numero_compteur, description, date_creation) VALUES ($1,$2,$3)',[request.body.numero_compteur, request.body.description, request.body.date_creation], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }
@@ -152,6 +152,32 @@ app.get('/anomalies', (request,response) => {
     if (error) {
       throw error
     }
+    response.send(results.rows);
+  })
+});
+
+app.delete('/deleteanomalie/:id', (request,response) => {
+  const id = request.params.id;
+
+  console.log(id);
+  client.query('DELETE FROM anomalies WHERE id=$1',[id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    console.log(results.rows);
+    response.send(results.rows);
+  })
+});
+
+app.delete('/deletecompteur/:id', (request,response) => {
+  const id = request.params.id;
+
+  console.log(id);
+  client.query('DELETE FROM compteurs WHERE id=$1',[id], (error, results) => {
+    if (error) {
+      throw error
+    }
+    console.log(results.rows);
     response.send(results.rows);
   })
 });

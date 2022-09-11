@@ -7,15 +7,6 @@
     tools:context=".Activity.MainActivity">
 
     <TextView
-        android:id="@+id/text1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="test"
-        android:textSize="30sp"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <TextView
         android:id="@+id/textViewConnexion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

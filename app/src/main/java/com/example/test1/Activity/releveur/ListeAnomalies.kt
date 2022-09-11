@@ -36,7 +36,37 @@ class ListeAnomalies : AppCompatActivity() {
                 if (allAnomalies != null) {
                     for (a in allAnomalies) {
                         anomaliesList.add(
-                            AnomalieRes(a.id ,a.numero_compteur, a.description)
+                            AnomalieRes(a.id ,a.numero_compteur, a.description, a.date_creation)
+                        )
+                        val adapter: AnomalieAdapter = AnomalieAdapter(this@ListeAnomalies, anomaliesList)
+                        listView.adapter = adapter
+                    }
+                    val nbrAnomalies = findViewById<TextView>(R.id.nbrAnomalies_text)
+                    nbrAnomalies.text = "Nombre des anomalies : " + allAnomalies.count().toString()
+                }
+            }
+
+            override fun onFailure(call: Call<List<AnomalieRes>>, t: Throwable) {
+                Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+            }
+        })
+    }
+    override fun onRestart() {
+        super.onRestart()
+        val retrofit = RetrofitClient.getInstance();
+        val iretrofit = retrofit.create(RetrofitInterface::class.java)
+
+        val anomaliesList: ArrayList<AnomalieRes> = ArrayList<AnomalieRes>()
+        val listView = findViewById<ListView>(R.id.liste_anomalies_listview)
+
+        val AnomaliesQuery = iretrofit.listAnomalies()
+        AnomaliesQuery.enqueue(object : Callback<List<AnomalieRes>> {
+            override fun onResponse(call: Call<List<AnomalieRes>>, response: Response<List<AnomalieRes>>) {
+                val allAnomalies = response.body()
+                if (allAnomalies != null) {
+                    for (a in allAnomalies) {
+                        anomaliesList.add(
+                            AnomalieRes(a.id ,a.numero_compteur, a.description, a.date_creation)
                         )
                         val adapter: AnomalieAdapter = AnomalieAdapter(this@ListeAnomalies, anomaliesList)
                         listView.adapter = adapter

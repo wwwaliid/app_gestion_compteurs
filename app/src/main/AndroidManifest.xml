@@ -63,6 +63,9 @@
             android:name=".Activity.releveur.ListeAnomalies"
             android:exported="false" />
         <activity
+            android:name=".Activity.releveur.AnomalieInfo"
+            android:exported="false" />
+        <activity
             android:name=".Activity.releveur.RechercherCompteur"
             android:exported="false" />
 

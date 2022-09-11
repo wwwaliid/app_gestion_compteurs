@@ -16,6 +16,8 @@ import com.example.test1.Retrofit.RetrofitInterface
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 
 class CreerAnomalie : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,12 +39,16 @@ class CreerAnomalie : AppCompatActivity() {
         creerAnomalie.setOnClickListener{
             val description : String = description.text.toString()
 
+            val c: Date = Calendar.getInstance().getTime()
+            val df = SimpleDateFormat("dd/MM/yyyy hh:mm", Locale.getDefault())
+            val date_creation: String = df.format(c)
+
             if(description==""){
                 val toast = Toast.makeText(applicationContext,"Please enter all fields", Toast.LENGTH_SHORT)
                 toast.show()
             }
             else{
-                val anomalie = Anomalie(intent.getStringExtra("numero_compteur").toString(), description)
+                val anomalie = Anomalie(intent.getStringExtra("numero_compteur").toString(), description, date_creation)
                 val req = iretrofit.creerAnomalie(anomalie)
                 req.enqueue(object : Callback<Anomalie> {
                     override fun onResponse(call: Call<Anomalie>, response: Response<Anomalie>) {

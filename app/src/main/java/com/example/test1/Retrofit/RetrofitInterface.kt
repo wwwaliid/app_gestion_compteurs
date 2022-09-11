@@ -33,4 +33,8 @@ interface RetrofitInterface {
     fun creerAnomalie(@Body data : Anomalie): Call<Anomalie>
     @GET("anomalies")
     fun listAnomalies(): Call<List<AnomalieRes>>
+    @DELETE("/deleteanomalie/{Id}")
+    fun deleteAnomalie(@Path("Id") anomalieid: String): Call<AnomalieRes>
+    @DELETE("/deletecompteur/{Id}")
+    fun deleteCompteur(@Path("Id") compteurid: String): Call<CompteurRes>
 }

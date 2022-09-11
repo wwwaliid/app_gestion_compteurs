@@ -9,6 +9,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Activity.admin.SignupPage
+import com.example.test1.Data.AnomalieRes
+import com.example.test1.Data.CompteurRes
 import com.example.test1.Data.EditIndexReq
 import com.example.test1.R
 import com.example.test1.Retrofit.RetrofitClient
@@ -51,7 +53,6 @@ class CompteurInfo : AppCompatActivity()  {
         val valider : Button = findViewById(R.id.valider)
 
         valider.setOnClickListener{
-            Log.d("indeeeeeeeeex",index_edittext.text.toString())
             ancienIndex.text = index.text
             index.text = index_edittext.text.toString()
 
@@ -68,6 +69,21 @@ class CompteurInfo : AppCompatActivity()  {
 
                 }
                 override fun onFailure(call: Call<EditIndexReq>, t: Throwable) {
+                    Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+                }
+            })
+        }
+
+        val supprimer_compteur : Button = findViewById(R.id.supprimer_compteur_button)
+
+        supprimer_compteur.setOnClickListener{
+            finish()
+            val req = iretrofit.deleteCompteur(intent.getStringExtra("id").toString())
+            req.enqueue(object : Callback<CompteurRes> {
+                override fun onResponse(call: Call<CompteurRes>, response: Response<CompteurRes>) {
+                    Log.i(MainActivity::class.simpleName, "COMPTEUR DELETED")
+                }
+                override fun onFailure(call: Call<CompteurRes>, t: Throwable) {
                     Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
                 }
             })
