@@ -14,6 +14,7 @@ class AdminDashboard : AppCompatActivity() {
 
         val liste_users_button : Button = findViewById<Button>(R.id.liste_user_button)
         val signup_button : Button = findViewById<Button>(R.id.home_signup_button)
+        val liste_anomalies_button = findViewById<Button>(R.id.liste_anomalies_button)
 
         liste_users_button.setOnClickListener{
             val intent = Intent(applicationContext, ListeUsers::class.java)
@@ -21,6 +22,10 @@ class AdminDashboard : AppCompatActivity() {
         }
         signup_button.setOnClickListener{
             val intent = Intent(applicationContext, SignupPage::class.java)
+            startActivity(intent)
+        }
+        liste_anomalies_button.setOnClickListener{
+            val intent = Intent(applicationContext, ListeAnomalies::class.java)
             startActivity(intent)
         }
     }

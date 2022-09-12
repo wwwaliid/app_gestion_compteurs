@@ -12,7 +12,7 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
     <TextView
         android:id="@+id/nomAbonne_text"
@@ -21,7 +21,7 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
     <TextView
         android:id="@+id/adresse_text"
@@ -30,7 +30,7 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
     <TextView
         android:id="@+id/index_text"
@@ -39,7 +39,7 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
     <TextView
         android:id="@+id/ancienIndex_text"
@@ -48,7 +48,7 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
     <TextView
         android:id="@+id/dateReleve_text"
@@ -57,7 +57,7 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
     <TextView
         android:id="@+id/quartier_text"
@@ -66,7 +66,16 @@
         android:text="TextView"
         android:background="@color/black"
         android:paddingLeft="10dp"
-        android:textSize="14dp"
+        android:textSize="10dp"
+        android:textColor="@color/white"/>
+    <TextView
+        android:id="@+id/anomalie_text"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:background="@color/black"
+        android:paddingLeft="10dp"
+        android:textSize="10dp"
         android:textColor="@color/white"/>
 
 

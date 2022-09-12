@@ -44,7 +44,7 @@ class CreerCompteur : AppCompatActivity() {
                 toast.show()
             }
             else{
-                val compteur : Compteur = Compteur(numero, nomAbonne, adresse, "0", "0", "",quartier)
+                val compteur = Compteur(numero, nomAbonne, adresse, "0", "0", "",quartier, "Aucune")
                 val req = iretrofit.creerCompteur(compteur)
                 req.enqueue(object : Callback<Compteur> {
                     override fun onResponse(call: Call<Compteur>, response: Response<Compteur>) {

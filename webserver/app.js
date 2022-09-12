@@ -74,7 +74,7 @@ app.post('/signup', (request,response) => {
 app.post('/creercompteur', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve, quartier) VALUES ($1,$2,$3,$4,$5,$6,$7)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve, request.body.quartier ], (error, results) => {
+  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve, quartier, anomalie) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve, request.body.quartier, request.body.anomalie ], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }
@@ -82,6 +82,7 @@ app.post('/creercompteur', (request,response) => {
     }
   })
 });
+
 app.post('/recherchercompteur', (request,response) => {
   console.log(request.body)
 
@@ -93,8 +94,6 @@ app.post('/recherchercompteur', (request,response) => {
     //numero or quartier search
     query = 'SELECT * FROM compteurs WHERE numero=$1 OR quartier=$2'
   }
-  
-
   client.query(query,[request.body.numero, request.body.quartier], (error, results) => {
     if (error) {
       throw "erroooooooor"
@@ -135,7 +134,7 @@ app.delete('/deleteuser/:id', (request,response) => {
 app.post('/creeranomalie', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO anomalies(numero_compteur, description, date_creation) VALUES ($1,$2,$3)',[request.body.numero_compteur, request.body.description, request.body.date_creation], (error, results) => {
+  client.query('INSERT INTO anomalies(description) VALUES ($1)',[request.body.description], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }
@@ -180,6 +179,16 @@ app.delete('/deletecompteur/:id', (request,response) => {
     console.log(results.rows);
     response.send(results.rows);
   })
+});
+
+app.post('/editanomalie', (request,response) => {
+  console.log(request.body)
+
+  client.query('UPDATE compteurs SET anomalie = $1 WHERE id = $2',[request.body.description, request.body.id_compteur], (error, results) => {
+    console.log('anomalie updated');
+    
+  })
+
 });
 
 app.listen(3000, function(err){

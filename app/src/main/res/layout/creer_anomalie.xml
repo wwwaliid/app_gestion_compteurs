@@ -15,21 +15,12 @@
         android:gravity="center" />
 
     <EditText
-        android:id="@+id/numero_compteur_anomalie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:layout_below="@id/creerAnomalie_title"
-        android:layout_margin="10dp"
-        android:editable="false"/>
-
-    <EditText
         android:id="@+id/description_anomalie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Description"
-        android:layout_below="@id/numero_compteur_anomalie"
+        android:layout_below="@id/creerAnomalie_title"
         android:layout_margin="10dp" />
 
     <Button

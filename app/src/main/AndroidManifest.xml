@@ -57,10 +57,10 @@
             android:name=".Activity.releveur.CreerCompteur"
             android:exported="false" />
         <activity
-            android:name=".Activity.releveur.CreerAnomalie"
+            android:name=".Activity.admin.CreerAnomalie"
             android:exported="false" />
         <activity
-            android:name=".Activity.releveur.ListeAnomalies"
+            android:name=".Activity.admin.ListeAnomalies"
             android:exported="false" />
         <activity
             android:name=".Activity.releveur.AnomalieInfo"

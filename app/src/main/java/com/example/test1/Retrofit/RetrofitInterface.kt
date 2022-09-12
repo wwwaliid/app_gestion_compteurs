@@ -37,4 +37,6 @@ interface RetrofitInterface {
     fun deleteAnomalie(@Path("Id") anomalieid: String): Call<AnomalieRes>
     @DELETE("/deletecompteur/{Id}")
     fun deleteCompteur(@Path("Id") compteurid: String): Call<CompteurRes>
+    @POST("editanomalie")
+    fun editAnomalie(@Body data : EditAnomalieReq): Call<EditAnomalieReq>
 }

@@ -35,13 +35,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/creer_compteur_button" />
 
-    <Button
-        android:id="@+id/liste_anomalies_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liste des anomalies"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/rechercher_compteur_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

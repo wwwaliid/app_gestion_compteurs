@@ -23,20 +23,14 @@ class AnomalieAdapter(private val context: Activity, private val arrayList: Arra
         val inflater : LayoutInflater = LayoutInflater.from(context)
         val view : View = inflater.inflate(R.layout.anomalies_list_item, null, true)
 
-        val numero_compteur : TextView = view.findViewById(R.id.numero_compteur_anomalie_text)
         val description_anomalie : TextView = view.findViewById(R.id.description_anomalie_text)
-        val date_creation : TextView = view.findViewById(R.id.dateCreation_anomalie_text)
 
-        numero_compteur.text = arrayList[position].numero_compteur
         description_anomalie.text = arrayList[position].description
-       date_creation.text = arrayList[position].date_creation
 
         view.setOnClickListener{
             val intent = Intent(view.context, AnomalieInfo::class.java)
             intent.putExtra("id", arrayList[position].id.toString())
-            intent.putExtra("numero_compteur", arrayList[position].numero_compteur)
             intent.putExtra("description", arrayList[position].description)
-            intent.putExtra("date_creation", arrayList[position].date_creation)
 
             context.startActivity(intent)
         }
