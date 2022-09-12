@@ -32,13 +32,9 @@ class AnomalieInfo : AppCompatActivity()  {
 
         val intent = intent
 
-        val numero_compteur: TextView = findViewById(R.id.numero_compteur)
         val description: TextView = findViewById(R.id.description)
-        val date_creation: TextView = findViewById(R.id.dateCreation)
 
-        numero_compteur.text = intent.getStringExtra("numero_compteur");
         description.text = intent.getStringExtra("description");
-        date_creation.text = intent.getStringExtra("date_creation");
 
         val supprimer_anomalie : Button = findViewById(R.id.supprimer_anomalie_button)
 

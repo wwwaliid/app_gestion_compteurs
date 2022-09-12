@@ -59,12 +59,12 @@ class ListeCompteurs : AppCompatActivity(){
         }
         sendListCompteursReq()
 
-        val refresh_button: Button = findViewById(R.id.refresh)
+        /*val refresh_button: Button = findViewById(R.id.refresh)
         refresh_button.setOnClickListener {
             compteurList.clear()
             listView.adapter = null
             sendListCompteursReq()
-        }
+        }*/
     }
     override fun onRestart(){
         super.onRestart()

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import com.example.test1.Activity.admin.ListeAnomalies
 import com.example.test1.R
 
@@ -12,6 +13,11 @@ class ReleveurHome : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.releveur_home)
 
+        val intent = intent
+
+        val releveur_home_title: TextView = findViewById(R.id.releveur_home_title)
+
+        releveur_home_title.text = intent.getStringExtra("nom");
 
         val liste_compteurs_button : Button = findViewById<Button>(R.id.liste_compteur_button)
         val creer_compteur_button : Button = findViewById<Button>(R.id.creer_compteur_button)

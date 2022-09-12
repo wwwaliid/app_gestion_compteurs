@@ -40,7 +40,7 @@ class ListeUsers : AppCompatActivity() {
                         listView.adapter = adapter
                     }
                     val nbrUser = findViewById<TextView>(R.id.nbrUsers_text)
-                    nbrUser.text = "Nombre des utilsiateurs : " + allUsers.count().toString()
+                    nbrUser.text = "Nombre des utilisateurs : " + allUsers.count().toString()
                 }
             }
 
@@ -71,7 +71,7 @@ class ListeUsers : AppCompatActivity() {
                         listView.adapter = adapter
                     }
                     val nbrUser = findViewById<TextView>(R.id.nbrUsers_text)
-                    nbrUser.text = "Nombre des utilsiateurs : " + allUsers.count().toString()
+                    nbrUser.text = "Nombre des utilisateurs : " + allUsers.count().toString()
                 }
             }
 

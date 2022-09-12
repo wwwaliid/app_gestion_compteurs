@@ -8,19 +8,19 @@
         android:id="@+id/page_compteurs_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="Liste des compteurs"
-        android:textSize="30dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_margin="50dp"
         android:textStyle="bold"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="20dp"/>
-    <Button
+        android:gravity="center" />
+<!--    <Button
         android:id="@+id/refresh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/ic_baseline_refresh_24"
         android:layout_toRightOf="@id/page_compteurs_title"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"/>-->
     <TextView
         android:id="@+id/nbrCompteur"
         android:layout_width="wrap_content"
@@ -28,13 +28,73 @@
         android:text="TextView"
         android:layout_below="@+id/page_compteurs_title"
         android:textSize="20dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nbrCompteur"
+        android:id="@+id/table_titles_compteur">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Numero"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Abonné"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Quartier"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Index"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Date relève"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/list1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/nbrCompteur">
+        android:layout_below="@+id/table_titles_compteur">
     </ListView>
 
 

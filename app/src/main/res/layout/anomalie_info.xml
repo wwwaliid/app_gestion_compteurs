@@ -14,58 +14,28 @@
         android:layout_marginBottom="50dp"
         android:layout_marginTop="20dp"/>
     <TextView
-        android:id="@+id/numero_compteur_text"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Numero du compteur : "
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/anomalie_info_title"/>
-    <TextView
         android:id="@+id/description_text"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:text="Description : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/numero_compteur_text"/>
-    <TextView
-        android:id="@+id/dateCreation_text"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:text="Date de création : "
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/description_text"/>
+        android:layout_below="@+id/anomalie_info_title"/>
 
-    <TextView
-        android:id="@+id/numero_compteur"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/anomalie_info_title"
-        android:layout_toRightOf="@+id/numero_compteur_text"/>
     <TextView
         android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="TextView"
         android:paddingLeft="10dp"
-        android:layout_below="@+id/numero_compteur"
+        android:layout_below="@+id/anomalie_info_title"
         android:layout_toRightOf="@+id/description_text"/>
-    <TextView
-        android:id="@+id/dateCreation"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="TextView"
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/description"
-        android:layout_toRightOf="@+id/dateCreation_text"/>
 
     <Button
         android:id="@+id/supprimer_anomalie_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Supprimer"
-        android:layout_below="@id/dateCreation_text"
+        android:layout_below="@id/description_text"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#FF0000"/>
 

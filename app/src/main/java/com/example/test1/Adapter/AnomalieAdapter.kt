@@ -27,13 +27,13 @@ class AnomalieAdapter(private val context: Activity, private val arrayList: Arra
 
         description_anomalie.text = arrayList[position].description
 
-        view.setOnClickListener{
+        /*view.setOnClickListener{
             val intent = Intent(view.context, AnomalieInfo::class.java)
             intent.putExtra("id", arrayList[position].id.toString())
             intent.putExtra("description", arrayList[position].description)
 
             context.startActivity(intent)
-        }
+        }*/
 
 
         return view

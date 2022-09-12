@@ -69,7 +69,9 @@
         android:textSize="20dp"
         android:gravity="center"
         android:layout_margin="40dp"
-        android:layout_below="@id/role_spinner" />
+        android:layout_below="@id/role_spinner"
+        android:backgroundTint="#3467eb"
+        android:textColor="@color/white"/>
 
 
 

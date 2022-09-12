@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MainActivity">
 
+    <ImageView
+        android:id="@+id/amendis_logo"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:src="@drawable/amendis"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:id="@+id/textViewConnexion"
         android:layout_width="match_parent"
@@ -15,7 +23,8 @@
         android:textColor="@color/white"
         android:layout_margin="50dp"
         android:textStyle="bold"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_below="@+id/amendis_logo"/>
 
     <EditText
         android:id="@+id/email_edittext"
@@ -23,7 +32,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Nom d'utilisateur"
+        android:hint="Email d'utilisateur"
         android:layout_below="@id/textViewConnexion"
         android:layout_margin="10dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
@@ -49,6 +58,10 @@
         android:textSize="20dp"
         android:gravity="center"
         android:layout_margin="40dp"
-        android:layout_below="@id/password_edittext" />
+        android:layout_below="@id/password_edittext"
+        android:backgroundTint="#3467eb"
+        android:textColor="@color/white"/>
+
+
 
 </RelativeLayout>

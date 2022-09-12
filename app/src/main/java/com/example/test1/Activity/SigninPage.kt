@@ -57,6 +57,7 @@ class SigninPage : AppCompatActivity() {
                             }
                             else if (user_connected.role == "1"){
                                 val intent = Intent(applicationContext, ReleveurHome::class.java)
+                                intent.putExtra("nom", user_connected.nom)
                                 startActivity(intent)
                             }
                             else if (user_connected.role == "2"){

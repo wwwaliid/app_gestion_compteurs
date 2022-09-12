@@ -5,20 +5,23 @@
 
     <TextView
         android:id="@+id/liste_anomalies_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="Liste des anomalies"
-        android:textSize="30dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_margin="50dp"
         android:textStyle="bold"
-        android:layout_marginBottom="50dp"
-        android:layout_marginTop="20dp"/>
+        android:gravity="center" />
     <Button
         android:id="@+id/creerAnomalie_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Créer Anomalie"
-        android:layout_below="@+id/liste_anomalies_title"/>
+        android:text="Créer Nouvelle Anomalie"
+        android:layout_below="@+id/liste_anomalies_title"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:id="@+id/nbrAnomalies_text"
@@ -27,14 +30,23 @@
         android:text="TextView"
         android:layout_below="@+id/creerAnomalie_button"
         android:textSize="20dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/white"
+        android:padding="10dp"/>
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Description"
-        android:layout_below="@+id/nbrAnomalies_text"/>
+        android:layout_below="@+id/nbrAnomalies_text"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+        android:padding="5dp"
+        android:layout_marginLeft="5dp"
+        android:gravity="center"/>
     <ListView
         android:id="@+id/liste_anomalies_listview"
         android:layout_width="match_parent"

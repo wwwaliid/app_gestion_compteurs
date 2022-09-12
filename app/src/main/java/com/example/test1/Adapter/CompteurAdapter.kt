@@ -23,22 +23,16 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
 
         val nomAbonne : TextView = view.findViewById(R.id.nomAbonne_text)
         val index : TextView = view.findViewById(R.id.index_text)
-        val ancienIndex : TextView = view.findViewById(R.id.ancienIndex_text)
-        val rue : TextView = view.findViewById(R.id.adresse_text)
         val dateReleve : TextView = view.findViewById(R.id.dateReleve_text)
         val numero : TextView = view.findViewById(R.id.numero_text)
         val quartier : TextView = view.findViewById(R.id.quartier_text)
-        val anomalie : TextView = view.findViewById(R.id.anomalie_text)
 
 
         nomAbonne.text = arrayList[position].nom_abonne
         index.text = arrayList[position].index
-        ancienIndex.text = arrayList[position].ancien_index
-        rue.text = arrayList[position].adresse
         dateReleve.text = arrayList[position].date_releve
         numero.text = arrayList[position].numero
         quartier.text = arrayList[position].quartier
-        anomalie.text = arrayList[position].anomalie
 
         view.setOnClickListener{
             val intent = Intent(view.context, CompteurInfo::class.java)

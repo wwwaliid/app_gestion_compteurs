@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Administrateur"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/home_signup_button"
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:id="@+id/home_signup_button"
         android:layout_width="wrap_content"
@@ -13,7 +23,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/liste_user_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#3467eb"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/liste_user_button"
@@ -23,7 +35,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="#3467eb"
+        android:textColor="@color/white"/>
 
     <Button
         android:id="@+id/liste_anomalies_button"
@@ -33,6 +47,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/liste_user_button" />
+        app:layout_constraintTop_toTopOf="@+id/liste_user_button"
+        android:backgroundTint="#3467eb"
+        android:textColor="@color/white"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,70 +6,94 @@
 
     <TextView
         android:id="@+id/compteur_info_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="Informations sur compteur"
-        android:textSize="30dp"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:layout_margin="30dp"
         android:textStyle="bold"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="20dp"/>
+        android:gravity="center"/>
     <TextView
         android:id="@+id/numero_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
-        android:text="Numero du compteur : "
+        android:text="Numero : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/compteur_info_title"/>
+        android:layout_below="@+id/compteur_info_title"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/nomAbonne_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
         android:text="Nom d'abonné : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/numero_text"/>
+        android:layout_below="@+id/numero_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/index_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
-        android:text="Index du compteur : "
+        android:text="Index : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/nomAbonne_text"/>
+        android:layout_below="@+id/nomAbonne_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/ancienIndex_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
-        android:text="Ancien Index du compteur : "
+        android:text="Ancien Index : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/index_text"/>
+        android:layout_below="@+id/index_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/adresse_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
         android:text="Adresse : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/ancienIndex_text"/>
+        android:layout_below="@+id/ancienIndex_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/dateReleve_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
         android:text="Date de relève : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/adresse_text"/>
+        android:layout_below="@+id/adresse_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/quartier_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
         android:text="Quartier : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/dateReleve_text"/>
+        android:layout_below="@+id/dateReleve_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/anomalie_text"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="30dp"
         android:text="Anomalie : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/quartier_text"/>
+        android:layout_below="@+id/quartier_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/numero"
@@ -78,7 +102,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/compteur_info_title"
-        android:layout_toRightOf="@+id/numero_text"/>
+        android:layout_toRightOf="@+id/numero_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/nomAbonne"
         android:layout_width="match_parent"
@@ -86,7 +111,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/numero"
-        android:layout_toRightOf="@+id/nomAbonne_text"/>
+        android:layout_toRightOf="@+id/nomAbonne_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/index"
         android:layout_width="match_parent"
@@ -94,7 +120,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/nomAbonne"
-        android:layout_toRightOf="@+id/index_text"/>
+        android:layout_toRightOf="@+id/index_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/ancienIndex"
         android:layout_width="match_parent"
@@ -102,7 +129,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/index"
-        android:layout_toRightOf="@+id/ancienIndex_text"/>
+        android:layout_toRightOf="@+id/ancienIndex_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/adresse"
         android:layout_width="match_parent"
@@ -110,7 +138,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/ancienIndex"
-        android:layout_toRightOf="@+id/adresse_text"/>
+        android:layout_toRightOf="@+id/adresse_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/dateReleve"
         android:layout_width="match_parent"
@@ -118,7 +147,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/adresse"
-        android:layout_toRightOf="@+id/dateReleve_text"/>
+        android:layout_toRightOf="@+id/dateReleve_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/quartier"
         android:layout_width="match_parent"
@@ -126,7 +156,8 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/dateReleve"
-        android:layout_toRightOf="@+id/quartier_text"/>
+        android:layout_toRightOf="@+id/quartier_text"
+        android:textSize="16sp"/>
     <TextView
         android:id="@+id/anomalie"
         android:layout_width="match_parent"
@@ -134,26 +165,29 @@
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/quartier"
-        android:layout_toRightOf="@+id/anomalie_text"/>
+        android:layout_toRightOf="@+id/anomalie_text"
+        android:textSize="16sp"/>
 
     <EditText
         android:id="@+id/index_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="index"
-        android:layout_below="@id/anomalie_text"/>
+        android:hint="Nouveau index"
+        android:layout_below="@id/anomalie" />
     <Button
         android:id="@+id/valider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Valider nouveau index"
-        android:layout_below="@+id/index_edittext"/>
+        android:layout_below="@+id/index_edittext"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"/>
     <Spinner
         android:id="@+id/anomalie_spinner"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_below="@id/valider"
-        android:spinnerMode="dropdown"
+        android:spinnerMode="dialog"
         android:textSize="20dp"
         android:layout_marginTop="30dp"/>
     <Button
@@ -162,7 +196,9 @@
         android:layout_height="wrap_content"
         android:text="Modifier anomalie"
         android:layout_below="@+id/anomalie_spinner"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"/>
     <Button
         android:id="@+id/supprimer_compteur_button"
         android:layout_width="match_parent"
@@ -170,6 +206,7 @@
         android:text="Supprimer compteur"
         android:layout_below="@+id/modifier_anomalie_button"
         android:layout_marginTop="50dp"
-        android:backgroundTint="#FF0000"/>
+        android:backgroundTint="#FF0000"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

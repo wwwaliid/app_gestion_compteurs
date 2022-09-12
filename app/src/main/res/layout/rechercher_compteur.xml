@@ -25,7 +25,7 @@
         android:hint="Numero du compteur"
         android:layout_below="@id/textViewRecherche"
         android:layout_margin="10dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
         android:drawablePadding="10dp"/>
     <EditText
         android:id="@+id/rechercherquartier_edittext"
@@ -36,7 +36,7 @@
         android:hint="Quartier du compteur"
         android:layout_below="@id/recherchernumero_edittext"
         android:layout_margin="10dp"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawableLeft="@drawable/ic_baseline_info_24"
         android:drawablePadding="10dp"/>
 
     <Button
@@ -45,13 +45,74 @@
         android:layout_height="wrap_content"
         android:text="Rechercher"
         android:layout_below="@+id/rechercherquartier_edittext"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rechercher_button"
+        android:layout_marginTop="10dp"
+        android:id="@+id/table_titles_compteur">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Numero"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Abonné"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Quartier"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Index"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Date relève"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+    </LinearLayout>
 
     <ListView
         android:id="@+id/rechercher_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rechercher_button">
+        android:layout_below="@+id/table_titles_compteur">
     </ListView>
 
 
