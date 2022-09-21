@@ -5,6 +5,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Data.Anomalie
@@ -48,6 +49,12 @@ class CreerAnomalie : AppCompatActivity() {
                         Log.i(MainActivity::class.simpleName, "on FAILURE??????")
                     }
                 })
+                val dialogBuilder = AlertDialog.Builder(this)
+                dialogBuilder.setTitle("Info")
+                dialogBuilder.setMessage("Anomalie créé avec succés")
+                dialogBuilder.setIcon(R.drawable.ic_baseline_check_24)
+                val dialog = dialogBuilder.create()
+                dialog.show()
             }
         }
     }

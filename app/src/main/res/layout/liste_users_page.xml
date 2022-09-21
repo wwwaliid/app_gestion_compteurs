@@ -28,8 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/nbrUsers_text"
-        android:id="@+id/table_titles"
-        android:layout_marginLeft="5dp">
+        android:id="@+id/table_titles">
 
         <TextView
             android:layout_width="match_parent"
@@ -39,7 +38,8 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@color/blue"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +48,8 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@color/blue"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -57,7 +58,8 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@color/blue"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,7 +68,8 @@
             android:textSize="20dp"
             android:textColor="@color/white"
             android:background="@color/blue"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:gravity="center"/>
     </LinearLayout>
 
 

@@ -26,7 +26,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_format_list_bulleted_24"
+        android:drawableLeft="@drawable/ic_baseline_format_list_bulleted_24"/>
 
     <Button
         android:id="@+id/creer_compteur_button"
@@ -38,18 +40,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_add_circle_outline_24"
+        android:drawableLeft="@drawable/ic_baseline_add_circle_outline_24"/>
 
     <Button
         android:id="@+id/rechercher_compteur_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rechercher un compteur"
+        android:text="Rechercher compteur"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/creer_compteur_button"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_search_24"
+        android:drawableLeft="@drawable/ic_baseline_search_24"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,7 +21,9 @@
         android:layout_below="@+id/liste_anomalies_title"
         android:backgroundTint="@color/blue"
         android:textColor="@color/white"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:drawableRight="@drawable/ic_baseline_add_circle_outline_24"
+        android:drawableLeft="@drawable/ic_baseline_add_circle_outline_24"/>
 
     <TextView
         android:id="@+id/nbrAnomalies_text"
@@ -45,7 +47,6 @@
         android:textColor="@color/white"
         android:background="@color/blue"
         android:padding="5dp"
-        android:layout_marginLeft="5dp"
         android:gravity="center"/>
     <ListView
         android:id="@+id/liste_anomalies_listview"

@@ -2,10 +2,9 @@ package com.example.test1.Activity.admin
 
 import android.os.Bundle
 import android.util.Log
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Spinner
+import android.view.View
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Data.User
@@ -49,17 +48,30 @@ class SignupPage : AppCompatActivity() {
                 role="2"
             }
 
-            val user: User = User(nom, email, password, role)
-            Log.d("user",user.toString())
-            val req = iretrofit.signUp(user)
-            req.enqueue(object : Callback<User> {
-                override fun onResponse(call: Call<User>, response: Response<User>) {
+            if(nom=="" || email=="" || password==""){
+                val toast = Toast.makeText(applicationContext,"Il faut remplir tous les champs !", Toast.LENGTH_SHORT)
+                toast.show()
+            }
+            else{
+                val user: User = User(nom, email, password, role)
+                val req = iretrofit.signUp(user)
+                req.enqueue(object : Callback<User> {
+                    override fun onResponse(call: Call<User>, response: Response<User>) {
 
-                }
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    Log.i(MainActivity::class.simpleName, "on FAILURE??????")
-                }
-            })
+                    }
+                    override fun onFailure(call: Call<User>, t: Throwable) {
+                        Log.i(MainActivity::class.simpleName, "on FAILURE??????")
+                    }
+                })
+
+                val dialogBuilder = AlertDialog.Builder(this)
+                dialogBuilder.setTitle("Info")
+                dialogBuilder.setMessage("Utilisateur créé avec succés")
+                dialogBuilder.setIcon(R.drawable.ic_baseline_check_24)
+                val dialog = dialogBuilder.create()
+                dialog.show()
+            }
+
         }
     }
 }

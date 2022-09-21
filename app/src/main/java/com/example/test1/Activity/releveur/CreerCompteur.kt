@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Activity.admin.AdminDashboard
@@ -47,7 +48,7 @@ class CreerCompteur : AppCompatActivity() {
             var type : String = type_spinner.getSelectedItem().toString()
 
             if(numero=="" || nomAbonne=="" || adresse=="" || quartier==""){
-                val toast = Toast.makeText(applicationContext,"Please enter all fields", Toast.LENGTH_SHORT)
+                val toast = Toast.makeText(applicationContext,"Il faut remplir tous les champs !", Toast.LENGTH_SHORT)
                 toast.show()
             }
             else{
@@ -61,6 +62,12 @@ class CreerCompteur : AppCompatActivity() {
                         Log.i(MainActivity::class.simpleName, "on FAILURE??????")
                     }
                 })
+                val dialogBuilder = AlertDialog.Builder(this)
+                dialogBuilder.setTitle("Info")
+                dialogBuilder.setMessage("Compteur créé avec succés")
+                dialogBuilder.setIcon(R.drawable.ic_baseline_check_24)
+                val dialog = dialogBuilder.create()
+                dialog.show()
             }
         }
 

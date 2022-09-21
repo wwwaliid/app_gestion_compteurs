@@ -47,7 +47,9 @@
         android:layout_below="@+id/rechercherquartier_edittext"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/blue"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:drawableRight="@drawable/ic_baseline_search_24"
+        android:drawableLeft="@drawable/ic_baseline_search_24"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +62,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Numero"
+            android:text="Type"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1.1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Numéro"
             android:textSize="15dp"
             android:textColor="@color/white"
             android:background="@color/blue"
@@ -94,13 +106,13 @@
             android:textSize="15dp"
             android:textColor="@color/white"
             android:background="@color/blue"
-            android:layout_weight="1"
+            android:layout_weight="1.1"
             android:gravity="center"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="Date relève"
+            android:text="Relève"
             android:textSize="15dp"
             android:textColor="@color/white"
             android:background="@color/blue"

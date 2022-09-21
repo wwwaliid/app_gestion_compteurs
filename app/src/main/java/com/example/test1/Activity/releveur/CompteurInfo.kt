@@ -83,6 +83,12 @@ class CompteurInfo : AppCompatActivity()  {
                     Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
                 }
             })
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setTitle("Info")
+            dialogBuilder.setMessage("Index modifié avec succés")
+            dialogBuilder.setIcon(R.drawable.ic_baseline_check_24)
+            val dialog = dialogBuilder.create()
+            dialog.show()
         }
 
         val anomalie_spinner : Spinner = findViewById(R.id.anomalie_spinner)
@@ -120,6 +126,13 @@ class CompteurInfo : AppCompatActivity()  {
                     Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
                 }
             })
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setTitle("Info")
+            dialogBuilder.setMessage("Anomalie modifié avec succés")
+            dialogBuilder.setIcon(R.drawable.ic_baseline_check_24)
+            val dialog = dialogBuilder.create()
+            dialog.show()
+
             anomalie.text = anomalie_description
         }
 
@@ -127,8 +140,6 @@ class CompteurInfo : AppCompatActivity()  {
         val supprimer_compteur : Button = findViewById(R.id.supprimer_compteur_button)
 
         supprimer_compteur.setOnClickListener{
-            //finish()
-
             val dialogBuilder = AlertDialog.Builder(this)
             val supprimerPopupView : View = layoutInflater.inflate(R.layout.supprimer_popup,null)
 
