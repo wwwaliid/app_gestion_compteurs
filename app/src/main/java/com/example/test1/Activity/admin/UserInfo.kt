@@ -3,9 +3,11 @@ package com.example.test1.Activity.admin
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Data.EditIndexReq
@@ -44,16 +46,31 @@ class UserInfo : AppCompatActivity() {
 
         supprimer.setOnClickListener{
 
-            finish()
-            val req = iretrofit.deleteUser(intent.getStringExtra("id").toString())
-            req.enqueue(object : Callback<UserRes> {
-                override fun onResponse(call: Call<UserRes>, response: Response<UserRes>) {
-                    Log.i(MainActivity::class.simpleName, "USER DELETED")
-                }
-                override fun onFailure(call: Call<UserRes>, t: Throwable) {
-                    Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
-                }
-            })
+            val dialogBuilder = AlertDialog.Builder(this)
+            val supprimerUserPopupView : View = layoutInflater.inflate(R.layout.supprimer_popup,null)
+
+            dialogBuilder.setView(supprimerUserPopupView)
+            val dialog = dialogBuilder.create()
+            dialog.show()
+
+            val oui : Button = supprimerUserPopupView.findViewById(R.id.oui_supprimer)
+            val non : Button = supprimerUserPopupView.findViewById(R.id.non_supprimer)
+
+            oui.setOnClickListener{
+                val req = iretrofit.deleteUser(intent.getStringExtra("id").toString())
+                req.enqueue(object : Callback<UserRes> {
+                    override fun onResponse(call: Call<UserRes>, response: Response<UserRes>) {
+                        Log.i(MainActivity::class.simpleName, "USER DELETED")
+                    }
+                    override fun onFailure(call: Call<UserRes>, t: Throwable) {
+                        Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+                    }
+                })
+                finish()
+            }
+            non.setOnClickListener{
+                dialog.hide()
+            }
         }
     }
 }

@@ -1,8 +1,12 @@
 package com.example.test1.Activity.releveur
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Data.AnomalieRes
@@ -123,16 +127,50 @@ class CompteurInfo : AppCompatActivity()  {
         val supprimer_compteur : Button = findViewById(R.id.supprimer_compteur_button)
 
         supprimer_compteur.setOnClickListener{
-            finish()
-            val req = iretrofit.deleteCompteur(intent.getStringExtra("id").toString())
-            req.enqueue(object : Callback<CompteurRes> {
-                override fun onResponse(call: Call<CompteurRes>, response: Response<CompteurRes>) {
-                    Log.i(MainActivity::class.simpleName, "COMPTEUR DELETED")
-                }
-                override fun onFailure(call: Call<CompteurRes>, t: Throwable) {
-                    Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
-                }
-            })
+            //finish()
+
+            val dialogBuilder = AlertDialog.Builder(this)
+            val supprimerPopupView : View = layoutInflater.inflate(R.layout.supprimer_popup,null)
+
+            dialogBuilder.setView(supprimerPopupView)
+            val dialog = dialogBuilder.create()
+            dialog.show()
+
+            val oui : Button = supprimerPopupView.findViewById(R.id.oui_supprimer)
+            val non : Button = supprimerPopupView.findViewById(R.id.non_supprimer)
+
+            oui.setOnClickListener{
+                val req = iretrofit.deleteCompteur(intent.getStringExtra("id").toString())
+                req.enqueue(object : Callback<CompteurRes> {
+                    override fun onResponse(call: Call<CompteurRes>, response: Response<CompteurRes>) {
+                        Log.i(MainActivity::class.simpleName, "COMPTEUR DELETED")
+                    }
+                    override fun onFailure(call: Call<CompteurRes>, t: Throwable) {
+                        Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+                    }
+                })
+                finish()
+            }
+            non.setOnClickListener{
+                dialog.hide()
+            }
+
+        }
+
+        val showMaps : ImageButton = findViewById(R.id.maps_button)
+        showMaps.setOnClickListener{
+            // Create a Uri from an intent string. Use the result to create an Intent.
+            val gmmIntentUri = Uri.parse("geo:0,0?q=" + intent.getStringExtra("adresse"))
+
+            // Create an Intent from gmmIntentUri. Set the action to ACTION_VIEW
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+
+            // Make the Intent explicit by setting the Google Maps package
+            mapIntent.setPackage("com.google.android.apps.maps")
+
+            // Attempt to start an activity that can handle the Intent
+            startActivity(mapIntent)
+
         }
 
     }

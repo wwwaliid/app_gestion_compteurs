@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <TextView
         android:id="@+id/type_text"
         android:layout_width="140dp"
@@ -153,24 +155,33 @@
         android:layout_below="@+id/index"
         android:layout_toRightOf="@+id/ancienIndex_text"
         android:textSize="16sp"/>
+    <ImageButton
+        android:id="@+id/maps_button"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/maps_logo"
+        android:layout_below="@+id/ancienIndex"
+        android:layout_toRightOf="@+id/adresse_text"/>
     <TextView
         android:id="@+id/adresse"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
+        android:minHeight="30dp"
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/ancienIndex"
-        android:layout_toRightOf="@+id/adresse_text"
+        android:layout_toRightOf="@+id/maps_button"
         android:textSize="16sp"/>
+
     <TextView
         android:id="@+id/dateReleve"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:text="TextView"
-        android:paddingLeft="10dp"
         android:layout_below="@+id/adresse"
         android:layout_toRightOf="@+id/dateReleve_text"
-        android:textSize="16sp"/>
+        android:paddingLeft="10dp"
+        android:text="TextView"
+        android:textSize="16sp" />
     <TextView
         android:id="@+id/quartier"
         android:layout_width="match_parent"

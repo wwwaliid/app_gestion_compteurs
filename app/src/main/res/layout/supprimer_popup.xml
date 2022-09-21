@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/confirmer_supprimer_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voulez-vous vraiment supprimer ?"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmer_supprimer_text"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/oui_supprimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Oui"
+            android:layout_below="@+id/confirmer_supprimer_text"
+            android:backgroundTint="#FF0000"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/non_supprimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non"
+            android:layout_below="@+id/confirmer_supprimer_text"
+            android:layout_toRightOf="@+id/oui_supprimer"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/blue"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
