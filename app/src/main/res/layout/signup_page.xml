@@ -23,8 +23,19 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Nom d'utilisateur"
+        android:hint="Nom"
         android:layout_below="@id/textViewConnexion"
+        android:layout_margin="10dp"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"/>
+    <EditText
+        android:id="@+id/prenom_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Prénom"
+        android:layout_below="@id/username_edittext"
         android:layout_margin="10dp"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"/>
@@ -36,7 +47,7 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:hint="Email"
-        android:layout_below="@id/username_edittext"
+        android:layout_below="@id/prenom_edittext"
         android:layout_margin="10dp"
         android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
         android:drawablePadding="10dp"/>
@@ -68,7 +79,7 @@
         android:text="Créer compte"
         android:textSize="20dp"
         android:gravity="center"
-        android:layout_margin="40dp"
+        android:layout_margin="30dp"
         android:layout_below="@id/role_spinner"
         android:backgroundTint="#3467eb"
         android:textColor="@color/white"/>

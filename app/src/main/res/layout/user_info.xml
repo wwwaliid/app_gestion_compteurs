@@ -24,12 +24,22 @@
         android:textColor="@color/white"
         android:textSize="20sp"/>
     <TextView
+        android:id="@+id/prenom_text"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:text="Prénom : "
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/nom_text"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="20sp"/>
+    <TextView
         android:id="@+id/email_text"
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:text="Email : "
         android:paddingLeft="10dp"
-        android:layout_below="@+id/nom_text"
+        android:layout_below="@+id/prenom_text"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="20sp"/>
@@ -69,14 +79,31 @@
         android:autoSizeMaxTextSize="20sp"
         android:autoSizeStepGranularity="1sp"/>
     <TextView
-        android:id="@+id/email"
+        android:id="@+id/prenom"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="TextView"
         android:paddingLeft="10dp"
         android:layout_below="@+id/nom"
+        android:layout_toRightOf="@+id/nom_text"
+        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeStepGranularity="1sp"/>
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="TextView"
+        android:paddingLeft="10dp"
+        android:layout_below="@+id/prenom"
         android:layout_toRightOf="@+id/email_text"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeStepGranularity="1sp"/>
     <TextView
         android:id="@+id/role"
         android:layout_width="match_parent"
@@ -94,7 +121,11 @@
         android:paddingLeft="10dp"
         android:layout_below="@+id/role"
         android:layout_toRightOf="@+id/password_text"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeMaxTextSize="20sp"
+        android:autoSizeStepGranularity="1sp"/>
 
     <Button
         android:id="@+id/supprimer_button"
@@ -107,6 +138,7 @@
         android:textColor="@color/white"
         android:textSize="20dp"
         android:drawableLeft="@drawable/ic_baseline_delete_forever_24"
+        android:drawableRight="@drawable/ic_baseline_delete_forever_24"
         android:layout_marginTop="20dp"/>
 
 </RelativeLayout>

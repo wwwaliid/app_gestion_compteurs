@@ -22,6 +22,7 @@ class UsersAdapter(private val context: Activity, private val arrayList: ArrayLi
         val view : View = inflater.inflate(R.layout.users_list_item, null, true)
 
         val nom : TextView = view.findViewById(R.id.nom_user_text)
+        val prenom : TextView = view.findViewById(R.id.prenom_user_text)
         val email : TextView = view.findViewById(R.id.email_user_text)
         val password : TextView = view.findViewById(R.id.password_user_text)
         val role : TextView = view.findViewById(R.id.role_user_text)
@@ -30,6 +31,7 @@ class UsersAdapter(private val context: Activity, private val arrayList: ArrayLi
         nom.text = arrayList[position].nom
         email.text = arrayList[position].email
         password.text = arrayList[position].password
+        prenom.text = arrayList[position].prenom
         if(arrayList[position].role == "1"){
             role.text = "Releveur"
         }
@@ -41,6 +43,7 @@ class UsersAdapter(private val context: Activity, private val arrayList: ArrayLi
             val intent = Intent(view.context, UserInfo::class.java)
             intent.putExtra("id", arrayList[position].id.toString())
             intent.putExtra("nom", arrayList[position].nom)
+            intent.putExtra("prenom", arrayList[position].prenom)
             intent.putExtra("email", arrayList[position].email)
             if(arrayList[position].role == "1"){
                 intent.putExtra("role", "Releveur")

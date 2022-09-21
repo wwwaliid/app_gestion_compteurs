@@ -34,7 +34,7 @@ class ListeUsers : AppCompatActivity() {
                 if (allUsers != null) {
                     for (u in allUsers) {
                         usersList.add(
-                            UserRes(u.id ,u.nom ,u.email, u.password, u.role)
+                            UserRes(u.id, u.nom, u.prenom, u.email, u.password, u.role)
                         )
                         val adapter: UsersAdapter = UsersAdapter(this@ListeUsers, usersList)
                         listView.adapter = adapter
@@ -65,7 +65,7 @@ class ListeUsers : AppCompatActivity() {
                 if (allUsers != null) {
                     for (u in allUsers) {
                         usersList.add(
-                            UserRes(u.id ,u.nom ,u.email, u.password, u.role)
+                            UserRes(u.id ,u.nom, u.prenom ,u.email, u.password, u.role)
                         )
                         val adapter: UsersAdapter = UsersAdapter(this@ListeUsers, usersList)
                         listView.adapter = adapter

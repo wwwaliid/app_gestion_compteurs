@@ -58,4 +58,15 @@
         android:drawableRight="@drawable/ic_baseline_search_24"
         android:drawableLeft="@drawable/ic_baseline_search_24"/>
 
+    <Button
+        android:id="@+id/contacter_admin_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contacter admin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:drawableLeft="@drawable/ic_baseline_local_phone_24"
+        android:backgroundTint="#11a600"
+        android:textColor="@color/white"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

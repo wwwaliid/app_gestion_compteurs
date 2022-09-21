@@ -62,7 +62,7 @@ app.post('/signin', (request,response) => {
 app.post('/signup', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO users(nom, email, password, role) VALUES ($1,$2,$3,$4)',[request.body.nom, request.body.email, request.body.password, request.body.role], (error, results) => {
+  client.query('INSERT INTO users(nom, prenom, email, password, role) VALUES ($1,$2,$3,$4,$5)',[request.body.nom, request.body.prenom, request.body.email, request.body.password, request.body.role], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }
