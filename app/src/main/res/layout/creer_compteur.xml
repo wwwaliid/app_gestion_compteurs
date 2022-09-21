@@ -51,6 +51,15 @@
         android:ems="10"
         android:layout_below="@id/adresse_edittext"
         android:layout_margin="10dp" />
+    <Spinner
+        android:id="@+id/type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/quartier_edittext"
+        android:spinnerMode="dropdown"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_margin="10dp"/>
 
     <Button
         android:id="@+id/creerCompteur_button"
@@ -60,7 +69,7 @@
         android:textSize="20dp"
         android:gravity="center"
         android:layout_margin="40dp"
-        android:layout_below="@id/quartier_edittext"
+        android:layout_below="@id/type_spinner"
         android:backgroundTint="@color/blue"
         android:textColor="@color/white"/>
 

@@ -56,7 +56,7 @@ class RechercherCompteur : AppCompatActivity() {
                             "ID: ${c.id} \n NAME: ${c.name}"
                         )*/
                             compteurList.add(
-                                CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier, c.anomalie)
+                                CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier, c.anomalie, c.type)
                             )
                             val adapter = CompteurAdapter(this@RechercherCompteur, compteurList)
                             listView.adapter = adapter

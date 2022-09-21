@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.example.test1.Activity.releveur.CompteurInfo
 import com.example.test1.Data.Compteur
@@ -26,6 +27,7 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
         val dateReleve : TextView = view.findViewById(R.id.dateReleve_text)
         val numero : TextView = view.findViewById(R.id.numero_text)
         val quartier : TextView = view.findViewById(R.id.quartier_text)
+        val type : ImageView = view.findViewById(R.id.type_image_list)
 
 
         nomAbonne.text = arrayList[position].nom_abonne
@@ -33,6 +35,14 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
         dateReleve.text = arrayList[position].date_releve
         numero.text = arrayList[position].numero
         quartier.text = arrayList[position].quartier
+
+        if(arrayList[position].type == "Eau"){
+            type.setBackgroundResource(R.drawable.water)
+        }
+        else if(arrayList[position].type == "Électricité"){
+            type.setBackgroundResource(R.drawable.electricity)
+        }
+
 
         view.setOnClickListener{
             val intent = Intent(view.context, CompteurInfo::class.java)
@@ -45,6 +55,7 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
             intent.putExtra("numero", arrayList[position].numero)
             intent.putExtra("quartier", arrayList[position].quartier)
             intent.putExtra("anomalie", arrayList[position].anomalie)
+            intent.putExtra("type", arrayList[position].type)
 
             context.startActivity(intent)
         }

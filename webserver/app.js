@@ -74,7 +74,7 @@ app.post('/signup', (request,response) => {
 app.post('/creercompteur', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve, quartier, anomalie) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve, request.body.quartier, request.body.anomalie ], (error, results) => {
+  client.query('INSERT INTO compteurs(numero, nom_abonne, adresse, index, ancien_index, date_releve, quartier, anomalie, type) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9)',[request.body.numero, request.body.nom_abonne, request.body.adresse, request.body.index, request.body.ancien_index, request.body.date_releve, request.body.quartier, request.body.anomalie, request.body.type ], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }

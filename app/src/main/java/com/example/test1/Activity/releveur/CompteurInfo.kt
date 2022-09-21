@@ -1,12 +1,10 @@
 package com.example.test1.Activity.releveur
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
-import com.example.test1.Activity.admin.CreerAnomalie
 import com.example.test1.Data.AnomalieRes
 import com.example.test1.Data.CompteurRes
 import com.example.test1.Data.EditAnomalieReq
@@ -39,6 +37,7 @@ class CompteurInfo : AppCompatActivity()  {
         val numero: TextView = findViewById(R.id.numero)
         val quartier: TextView = findViewById(R.id.quartier)
         val anomalie: TextView = findViewById(R.id.anomalie)
+        val type: TextView = findViewById(R.id.type)
 
         nomAbonne.text = intent.getStringExtra("nom_abonne")
         index.text = intent.getStringExtra("index")
@@ -48,6 +47,14 @@ class CompteurInfo : AppCompatActivity()  {
         numero.text = intent.getStringExtra("numero")
         quartier.text = intent.getStringExtra("quartier")
         anomalie.text = intent.getStringExtra("anomalie")
+        type.text = intent.getStringExtra("type")
+
+        if(intent.getStringExtra("type") == "Eau"){
+            type.setCompoundDrawablesWithIntrinsicBounds(R.drawable.water2, 0, 0, 0)
+        }
+        else if(intent.getStringExtra("type") == "Électricité"){
+            type.setCompoundDrawablesWithIntrinsicBounds(R.drawable.electricity2, 0, 0, 0)
+        }
 
         val index_edittext : EditText = findViewById(R.id.index_edittext)
         val valider : Button = findViewById(R.id.valider)

@@ -8,5 +8,6 @@ data class Compteur (
     val ancien_index: String,
     val date_releve: String,
     val quartier : String,
-    val anomalie : String
+    val anomalie : String,
+    val type : String
 )
