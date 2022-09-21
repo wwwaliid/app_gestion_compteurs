@@ -36,23 +36,40 @@
         android:textColor="@color/white"
         android:padding="10dp"/>
 
-    <TextView
-        android:id="@+id/textView5"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Description"
         android:layout_below="@+id/nbrAnomalies_text"
-        android:textStyle="bold"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        android:background="@color/blue"
-        android:padding="5dp"
-        android:gravity="center"/>
+        android:id="@+id/table_titles_anomalie">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Code"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="2"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Description"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:background="@color/blue"
+            android:layout_weight="1"
+            android:gravity="center"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/liste_anomalies_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView5"/>
+        android:layout_below="@+id/table_titles_anomalie"/>
 
 
 

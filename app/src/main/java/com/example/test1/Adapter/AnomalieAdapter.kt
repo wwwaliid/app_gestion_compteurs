@@ -24,16 +24,19 @@ class AnomalieAdapter(private val context: Activity, private val arrayList: Arra
         val view : View = inflater.inflate(R.layout.anomalies_list_item, null, true)
 
         val description_anomalie : TextView = view.findViewById(R.id.description_anomalie_text)
+        val code_anomalie : TextView = view.findViewById(R.id.code_anomalie_text)
 
         description_anomalie.text = arrayList[position].description
+        code_anomalie.text = arrayList[position].code
 
-        /*view.setOnClickListener{
+        view.setOnClickListener{
             val intent = Intent(view.context, AnomalieInfo::class.java)
             intent.putExtra("id", arrayList[position].id.toString())
             intent.putExtra("description", arrayList[position].description)
+            intent.putExtra("code", arrayList[position].code)
 
             context.startActivity(intent)
-        }*/
+        }
 
 
         return view

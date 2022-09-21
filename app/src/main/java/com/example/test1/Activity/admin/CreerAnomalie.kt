@@ -30,16 +30,18 @@ class CreerAnomalie : AppCompatActivity() {
 
         val creerAnomalie : Button = findViewById(R.id.creerAnomalie_button)
         val description: EditText = findViewById(R.id.description_anomalie)
+        val code: EditText = findViewById(R.id.code_anomalie)
 
         creerAnomalie.setOnClickListener{
             val description : String = description.text.toString()
+            val code : String = code.text.toString()
 
-            if(description==""){
-                val toast = Toast.makeText(applicationContext,"Please enter all fields", Toast.LENGTH_SHORT)
+            if(description=="" || code==""){
+                val toast = Toast.makeText(applicationContext,"Il faut remplir tous les champs !", Toast.LENGTH_SHORT)
                 toast.show()
             }
             else{
-                val anomalie = Anomalie(description)
+                val anomalie = Anomalie(code,description)
                 val req = iretrofit.creerAnomalie(anomalie)
                 req.enqueue(object : Callback<Anomalie> {
                     override fun onResponse(call: Call<Anomalie>, response: Response<Anomalie>) {

@@ -134,7 +134,7 @@ app.delete('/deleteuser/:id', (request,response) => {
 app.post('/creeranomalie', (request,response) => {
   console.log(request.body)
 
-  client.query('INSERT INTO anomalies(description) VALUES ($1)',[request.body.description], (error, results) => {
+  client.query('INSERT INTO anomalies(code,description) VALUES ($1,$2)',[request.body.code, request.body.description], (error, results) => {
     if (error) {
       throw "erroooooooor"
     }

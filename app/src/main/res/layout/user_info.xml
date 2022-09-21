@@ -108,12 +108,32 @@
         android:autoSizeMaxTextSize="20sp"
         android:autoSizeStepGranularity="1sp"/>
 
+    <EditText
+        android:id="@+id/password_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nouveau mot de passe"
+        android:layout_below="@id/password"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
+        android:drawablePadding="10dp"/>
+    <Button
+        android:id="@+id/valider_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valider nouveau mot de passe"
+        android:layout_below="@+id/password_edittext"
+        android:backgroundTint="@color/blue"
+        android:textColor="@color/white"
+        android:drawableLeft="@drawable/ic_baseline_edit_24"
+        android:drawableRight="@drawable/ic_baseline_edit_24"/>
+
     <Button
         android:id="@+id/supprimer_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Supprimer"
-        android:layout_below="@id/password_text"
+        android:layout_below="@id/valider_pass"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#FF0000"
         android:textColor="@color/white"

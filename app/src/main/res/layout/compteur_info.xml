@@ -206,7 +206,11 @@
         android:paddingLeft="10dp"
         android:layout_below="@+id/quartier"
         android:layout_toRightOf="@+id/anomalie_text"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeMaxTextSize="16sp"
+        android:autoSizeStepGranularity="1sp"/>
 
 
     <EditText

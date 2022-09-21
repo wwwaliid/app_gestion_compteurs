@@ -41,7 +41,7 @@ class ListeAnomalies : AppCompatActivity() {
                 if (allAnomalies != null) {
                     for (a in allAnomalies) {
                         anomaliesList.add(
-                            AnomalieRes(a.id , a.description)
+                            AnomalieRes(a.id, a.code, a.description)
                         )
                         val adapter = AnomalieAdapter(this@ListeAnomalies, anomaliesList)
                         listView.adapter = adapter
@@ -70,7 +70,7 @@ class ListeAnomalies : AppCompatActivity() {
                 if (allAnomalies != null) {
                     for (a in allAnomalies) {
                         anomaliesList.add(
-                            AnomalieRes(a.id , a.description)
+                            AnomalieRes(a.id , a.code, a.description)
                         )
                         val adapter = AnomalieAdapter(this@ListeAnomalies, anomaliesList)
                         listView.adapter = adapter
