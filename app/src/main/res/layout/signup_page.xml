@@ -63,15 +63,6 @@
         android:layout_margin="10dp"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="10dp"/>
-    <Spinner
-        android:id="@+id/role_spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/password_edittext2"
-        android:spinnerMode="dropdown"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:layout_margin="10dp"/>
     <Button
         android:id="@+id/signup_button"
         android:layout_width="match_parent"
@@ -80,7 +71,7 @@
         android:textSize="20dp"
         android:gravity="center"
         android:layout_margin="30dp"
-        android:layout_below="@id/role_spinner"
+        android:layout_below="@id/password_edittext2"
         android:backgroundTint="#3467eb"
         android:textColor="@color/white"/>
 

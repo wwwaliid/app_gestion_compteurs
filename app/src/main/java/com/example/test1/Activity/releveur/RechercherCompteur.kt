@@ -6,8 +6,6 @@ import android.util.Log
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
-import com.example.test1.Activity.admin.AdminDashboard
-import com.example.test1.Activity.agentfacturation.AgentFacturationHome
 import com.example.test1.Adapter.CompteurAdapter
 import com.example.test1.Data.Compteur
 import com.example.test1.Data.CompteurRecherche

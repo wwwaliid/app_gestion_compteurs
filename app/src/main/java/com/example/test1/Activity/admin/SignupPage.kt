@@ -26,30 +26,16 @@ class SignupPage : AppCompatActivity() {
         val username_edittext : EditText = findViewById(R.id.username_edittext)
         val email_edittext : EditText = findViewById(R.id.email_edittext2)
         val password_edittext : EditText = findViewById(R.id.password_edittext2)
-        val role_spinner : Spinner = findViewById(R.id.role_spinner)
         val signup_button : Button = findViewById(R.id.signup_button)
         val prenom_edittext : EditText = findViewById(R.id.prenom_edittext)
-
-        val roles: ArrayList<String> = ArrayList()
-        roles.add("Releveur")
-        roles.add("Agent de facturation")
-        val dataAdapter: ArrayAdapter<String> = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, roles)
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        role_spinner.setAdapter(dataAdapter);
 
         signup_button.setOnClickListener {
             val nom: String = username_edittext.text.toString()
             val email: String = email_edittext.text.toString()
             val password: String = password_edittext.text.toString()
-            var role : String = role_spinner.getSelectedItem().toString()
+            var role = "1"
             val prenom : String = prenom_edittext.text.toString()
 
-            if(role =="Releveur"){
-                role="1"
-            }
-            else if(role=="Agent de facturation"){
-                role="2"
-            }
 
             if(nom=="" || email=="" || password==""){
                 val toast = Toast.makeText(applicationContext,"Il faut remplir tous les champs !", Toast.LENGTH_SHORT)

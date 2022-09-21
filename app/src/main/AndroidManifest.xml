@@ -45,9 +45,6 @@
             android:name=".Activity.admin.AdminDashboard"
             android:exported="false" />
         <activity
-            android:name=".Activity.agentfacturation.AgentFacturationHome"
-            android:exported="false" />
-        <activity
             android:name=".Activity.releveur.ReleveurHome"
             android:exported="false" />
         <activity

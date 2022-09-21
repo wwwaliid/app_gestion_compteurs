@@ -25,19 +25,12 @@ class UsersAdapter(private val context: Activity, private val arrayList: ArrayLi
         val prenom : TextView = view.findViewById(R.id.prenom_user_text)
         val email : TextView = view.findViewById(R.id.email_user_text)
         val password : TextView = view.findViewById(R.id.password_user_text)
-        val role : TextView = view.findViewById(R.id.role_user_text)
 
 
         nom.text = arrayList[position].nom
         email.text = arrayList[position].email
         password.text = arrayList[position].password
         prenom.text = arrayList[position].prenom
-        if(arrayList[position].role == "1"){
-            role.text = "Releveur"
-        }
-        else if(arrayList[position].role == "2"){
-            role.text = "Agent de facturation"
-        }
 
         view.setOnClickListener{
             val intent = Intent(view.context, UserInfo::class.java)
@@ -45,12 +38,6 @@ class UsersAdapter(private val context: Activity, private val arrayList: ArrayLi
             intent.putExtra("nom", arrayList[position].nom)
             intent.putExtra("prenom", arrayList[position].prenom)
             intent.putExtra("email", arrayList[position].email)
-            if(arrayList[position].role == "1"){
-                intent.putExtra("role", "Releveur")
-            }
-            else if(arrayList[position].role == "2"){
-                intent.putExtra("role", "Agent de facturation")
-            }
             intent.putExtra("password", arrayList[position].password)
             context.startActivity(intent)
         }

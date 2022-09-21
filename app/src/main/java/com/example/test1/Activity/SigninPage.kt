@@ -8,8 +8,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.admin.AdminDashboard
-import com.example.test1.Activity.agentfacturation.AgentFacturationHome
-import com.example.test1.Activity.releveur.ListeCompteurs
 import com.example.test1.Activity.releveur.ReleveurHome
 import com.example.test1.Data.SigninReq
 import com.example.test1.Data.User
@@ -58,10 +56,7 @@ class SigninPage : AppCompatActivity() {
                             else if (user_connected.role == "1"){
                                 val intent = Intent(applicationContext, ReleveurHome::class.java)
                                 intent.putExtra("nom", user_connected.nom)
-                                startActivity(intent)
-                            }
-                            else if (user_connected.role == "2"){
-                                val intent = Intent(applicationContext, AgentFacturationHome::class.java)
+                                intent.putExtra("prenom", user_connected.prenom)
                                 startActivity(intent)
                             }
                         }

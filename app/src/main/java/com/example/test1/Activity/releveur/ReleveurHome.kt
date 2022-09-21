@@ -17,11 +17,11 @@ class ReleveurHome : AppCompatActivity() {
 
         val releveur_home_title: TextView = findViewById(R.id.releveur_home_title)
 
-        releveur_home_title.text = intent.getStringExtra("nom");
+        releveur_home_title.text = intent.getStringExtra("nom") + " " + intent.getStringExtra("prenom")
 
-        val liste_compteurs_button : Button = findViewById<Button>(R.id.liste_compteur_button)
-        val creer_compteur_button : Button = findViewById<Button>(R.id.creer_compteur_button)
-        val rechercher_compteur_button : Button = findViewById<Button>(R.id.rechercher_compteur_button)
+        val liste_compteurs_button : Button = findViewById(R.id.liste_compteur_button)
+        val creer_compteur_button : Button = findViewById(R.id.creer_compteur_button)
+        val rechercher_compteur_button : Button = findViewById(R.id.rechercher_compteur_button)
         val contacter_admin_button : Button = findViewById(R.id.contacter_admin_button)
 
         liste_compteurs_button.setOnClickListener{

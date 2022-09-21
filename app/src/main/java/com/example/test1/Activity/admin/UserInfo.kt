@@ -35,13 +35,11 @@ class UserInfo : AppCompatActivity() {
         val nom: TextView = findViewById(R.id.nom)
         val prenom: TextView = findViewById(R.id.prenom)
         val email: TextView = findViewById(R.id.email)
-        val role: TextView = findViewById(R.id.role)
         val password: TextView = findViewById(R.id.password)
 
         nom.text = intent.getStringExtra("nom")
         prenom.text = intent.getStringExtra("prenom")
         email.text = intent.getStringExtra("email")
-        role.text = intent.getStringExtra("role")
         password.text = intent.getStringExtra("password")
 
         val supprimer : Button = findViewById(R.id.supprimer_button)
