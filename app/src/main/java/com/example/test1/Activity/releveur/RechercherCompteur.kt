@@ -23,6 +23,9 @@ class RechercherCompteur : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.rechercher_compteur)
 
+        val intent = intent
+        val role = intent.getStringExtra("role")
+
         val retrofit = RetrofitClient.getInstance();
         val iretrofit = retrofit.create(RetrofitInterface::class.java)
 
@@ -56,7 +59,7 @@ class RechercherCompteur : AppCompatActivity() {
                             compteurList.add(
                                 CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier, c.anomalie, c.type)
                             )
-                            val adapter = CompteurAdapter(this@RechercherCompteur, compteurList)
+                            val adapter = CompteurAdapter(this@RechercherCompteur, compteurList, role)
                             listView.adapter = adapter
                         }
                     }

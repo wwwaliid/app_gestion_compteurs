@@ -45,6 +45,12 @@
             android:name=".Activity.admin.AdminDashboard"
             android:exported="false" />
         <activity
+            android:name=".Activity.agent.AgentHome"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.agent.AgentCompteurInfo"
+            android:exported="false" />
+        <activity
             android:name=".Activity.releveur.ReleveurHome"
             android:exported="false" />
         <activity

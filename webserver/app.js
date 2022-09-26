@@ -54,7 +54,12 @@ app.post('/signin', (request,response) => {
     }
     else{
       console.log(results.rows[0]);
-      response.send(results.rows[0])
+      if(results.rows[0]==null){
+        response.send(JSON.parse('{"id": "","nom": "","prenom": "","email": "","password": "","role": ""}'))
+      }
+      else{
+        response.send(results.rows[0])
+      }
     }
   })
 });
@@ -110,7 +115,7 @@ app.get('/users', (request,response) => {
   //To access GET variable use req.query() and req.params() methods.
 
   console.log("users!!!!");
-  client.query('SELECT * FROM users WHERE id!=$1 ORDER BY id ASC',[1], (error, results) => {
+  client.query('SELECT * FROM users WHERE id!=$1 AND id!=$2 ORDER BY id ASC',[1,3], (error, results) => {
     if (error) {
       throw error
     }
@@ -186,6 +191,16 @@ app.post('/editanomalie', (request,response) => {
 
   client.query('UPDATE compteurs SET anomalie = $1 WHERE id = $2',[request.body.description, request.body.id_compteur], (error, results) => {
     console.log('anomalie updated');
+    
+  })
+
+});
+
+app.post('/editpassword', (request,response) => {
+  console.log(request.body)
+
+  client.query('UPDATE users SET password = $1 WHERE id = $2',[request.body.password, request.body.id], (error, results) => {
+    console.log('query sent');
     
   })
 

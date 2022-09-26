@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.admin.AdminDashboard
+import com.example.test1.Activity.agent.AgentHome
 import com.example.test1.Activity.releveur.ReleveurHome
 import com.example.test1.Data.SigninReq
 import com.example.test1.Data.User
@@ -37,7 +38,7 @@ class SigninPage : AppCompatActivity() {
             val password : String = password_edittext.text.toString()
 
             if(email=="" || password==""){
-                val toast = Toast.makeText(applicationContext,"Please enter both fields", Toast.LENGTH_SHORT)
+                val toast = Toast.makeText(applicationContext,"Il faut remplir tous les champs !", Toast.LENGTH_SHORT)
                 toast.show()
             }
             else{
@@ -48,16 +49,26 @@ class SigninPage : AppCompatActivity() {
                         Log.d("reeeeeeeeeeeeees",response.body().toString())
                         val user_connected : User? = response.body()
                         if (user_connected != null) {
-                            Log.d("role",user_connected.role)
-                            if(user_connected.role == "0"){
-                                val intent = Intent(applicationContext, AdminDashboard::class.java)
-                                startActivity(intent)
+                            if(user_connected.nom != ""){
+                                if(user_connected.role == "0"){
+                                    val intent = Intent(applicationContext, AdminDashboard::class.java)
+                                    startActivity(intent)
+                                }
+                                else if (user_connected.role == "1"){
+                                    val intent = Intent(applicationContext, ReleveurHome::class.java)
+                                    intent.putExtra("nom", user_connected.nom)
+                                    intent.putExtra("prenom", user_connected.prenom)
+                                    startActivity(intent)
+                                }
+                                else if (user_connected.role == "2"){
+                                    val intent = Intent(applicationContext, AgentHome::class.java)
+                                    intent.putExtra("role", "2")
+                                    startActivity(intent)
+                                }
                             }
-                            else if (user_connected.role == "1"){
-                                val intent = Intent(applicationContext, ReleveurHome::class.java)
-                                intent.putExtra("nom", user_connected.nom)
-                                intent.putExtra("prenom", user_connected.prenom)
-                                startActivity(intent)
+                            else{
+                                val toast = Toast.makeText(applicationContext,"Email et/ou mot de passe incorrect", Toast.LENGTH_SHORT)
+                                toast.show()
                             }
                         }
                     }

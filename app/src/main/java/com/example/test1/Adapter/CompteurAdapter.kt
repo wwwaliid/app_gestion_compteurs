@@ -2,19 +2,22 @@ package com.example.test1.Adapter
 
 import android.app.Activity
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.test1.Activity.HomePage
+import com.example.test1.Activity.agent.AgentCompteurInfo
 import com.example.test1.Activity.releveur.CompteurInfo
 import com.example.test1.Data.Compteur
 import com.example.test1.Data.CompteurRes
 import com.example.test1.R
 import org.w3c.dom.Text
 
-class CompteurAdapter(private val context: Activity, private val arrayList: ArrayList<CompteurRes>) : ArrayAdapter<CompteurRes>(context,
+class CompteurAdapter(private val context: Activity, private val arrayList: ArrayList<CompteurRes>, private val role : String?) : ArrayAdapter<CompteurRes>(context,
     R.layout.list_item, arrayList) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
@@ -45,7 +48,16 @@ class CompteurAdapter(private val context: Activity, private val arrayList: Arra
 
 
         view.setOnClickListener{
-            val intent = Intent(view.context, CompteurInfo::class.java)
+            var intent = Intent()
+
+            if(role=="2"){
+                intent = Intent(view.context, AgentCompteurInfo::class.java)
+                Log.d("aaaaaaaaaaaaaaa","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            }
+            else{
+                intent = Intent(view.context, CompteurInfo::class.java)
+                Log.d("aaaaaaaaaaaaaaaaaaaa",role.toString())
+            }
             intent.putExtra("id", arrayList[position].id.toString())
             intent.putExtra("nom_abonne", arrayList[position].nom_abonne)
             intent.putExtra("index", arrayList[position].index)

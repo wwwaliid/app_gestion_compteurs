@@ -1,5 +1,6 @@
 package com.example.test1.Activity.releveur
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -23,6 +24,9 @@ class ListeCompteurs : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.page_compteurs)
 
+        val intent = intent
+        val role = intent.getStringExtra("role")
+
         val retrofit = RetrofitClient.getInstance();
         val iretrofit = retrofit.create(RetrofitInterface::class.java)
 
@@ -43,7 +47,7 @@ class ListeCompteurs : AppCompatActivity(){
                             compteurList.add(
                                 CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier, c.anomalie, c.type)
                             )
-                            val adapter: CompteurAdapter = CompteurAdapter(this@ListeCompteurs, compteurList)
+                            val adapter: CompteurAdapter = CompteurAdapter(this@ListeCompteurs, compteurList,role)
                             listView.adapter = adapter
 
                         }
@@ -71,6 +75,9 @@ class ListeCompteurs : AppCompatActivity(){
         val retrofit = RetrofitClient.getInstance();
         val iretrofit = retrofit.create(RetrofitInterface::class.java)
 
+        val intent = intent
+        val role = intent.getStringExtra("role")
+
         val compteurList: ArrayList<CompteurRes> = ArrayList<CompteurRes>()
         val listView = findViewById<ListView>(R.id.list1)
 
@@ -87,7 +94,7 @@ class ListeCompteurs : AppCompatActivity(){
                         compteurList.add(
                             CompteurRes(c.id ,c.numero, c.nom_abonne, c.adresse, c.index, c.ancien_index, c.date_releve, c.quartier,c.anomalie, c.type)
                         )
-                        val adapter: CompteurAdapter = CompteurAdapter(this@ListeCompteurs, compteurList)
+                        val adapter: CompteurAdapter = CompteurAdapter(this@ListeCompteurs, compteurList,role)
                         listView.adapter = adapter
 
                     }

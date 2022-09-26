@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.test1.Activity.MainActivity
 import com.example.test1.Data.EditIndexReq
+import com.example.test1.Data.EditPassReq
 import com.example.test1.Data.UserRes
 import com.example.test1.R
 import com.example.test1.Retrofit.RetrofitClient
@@ -41,6 +42,31 @@ class UserInfo : AppCompatActivity() {
         prenom.text = intent.getStringExtra("prenom")
         email.text = intent.getStringExtra("email")
         password.text = intent.getStringExtra("password")
+
+
+        val password_edittext : EditText = findViewById(R.id.password_edittext)
+        val valider_password : Button = findViewById(R.id.valider_password)
+
+        valider_password.setOnClickListener{
+            password.text = password_edittext.text.toString()
+
+            val data = EditPassReq(intent.getStringExtra("id").toString(), password_edittext.text.toString())
+            val req = iretrofit.editPassword(data)
+            req.enqueue(object : Callback<EditPassReq> {
+                override fun onResponse(call: Call<EditPassReq>, response: Response<EditPassReq>) {
+
+                }
+                override fun onFailure(call: Call<EditPassReq>, t: Throwable) {
+                    Log.i(MainActivity::class.simpleName, "on FAILURE!!!!")
+                }
+            })
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setTitle("Info")
+            dialogBuilder.setMessage("Mot de passe modifié avec succés")
+            dialogBuilder.setIcon(R.drawable.ic_baseline_check_24)
+            val dialog = dialogBuilder.create()
+            dialog.show()
+        }
 
         val supprimer : Button = findViewById(R.id.supprimer_button)
 

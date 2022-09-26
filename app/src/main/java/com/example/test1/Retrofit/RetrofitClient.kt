@@ -6,7 +6,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object RetrofitClient {
 
-    val BASEURL = "http://192.168.1.100:3000/"
+    val BASEURL = "http://192.168.138.253:3000/"
 
     fun getInstance(): Retrofit {
         return Retrofit.Builder()

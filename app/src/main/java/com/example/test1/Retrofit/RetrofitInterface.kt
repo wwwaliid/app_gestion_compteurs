@@ -39,4 +39,6 @@ interface RetrofitInterface {
     fun deleteCompteur(@Path("Id") compteurid: String): Call<CompteurRes>
     @POST("editanomalie")
     fun editAnomalie(@Body data : EditAnomalieReq): Call<EditAnomalieReq>
+    @POST("editpassword")
+    fun editPassword(@Body data : EditPassReq): Call<EditPassReq>
 }
